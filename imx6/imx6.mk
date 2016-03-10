@@ -63,7 +63,6 @@ PRODUCT_PACKAGES += \
           iw \
           iwconfig \
           iwlist \
-          ES_File_Explorer \
           StabilityTest \
           setotg \
           lsusb 
