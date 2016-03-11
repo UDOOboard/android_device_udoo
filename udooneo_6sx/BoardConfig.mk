@@ -114,7 +114,7 @@ USE_GPU_ALLOCATOR := true
 IMX_CAMERA_HAL_V2 := false
 TARGET_VSYNC_DIRECT_REFRESH := true
 
-TARGET_UBOOT_VERSION := uboot-imx-2015_neo
+TARGET_UBOOT_VERSION := uboot-imx
 TARGET_BOOTLOADER_CONFIG := imx6sx:udoo_neo_android_defconfig
 TARGET_KERNEL_DEFCONF := udoo_neo_android_defconfig
 TARGET_BOARD_DTS_CONFIG := imx6sx-lvds7:imx6sx-udoo-neo-full-lvds7-m4.dtb imx6sx-hdmi:imx6sx-udoo-neo-full-hdmi-m4.dtb
