@@ -65,7 +65,8 @@ PRODUCT_PACKAGES += \
           iwlist \
           StabilityTest \
           setotg \
-          lsusb 
+          lsusb \
+          CMFileManager
 
 # Broadcom firmwares
 PRODUCT_PACKAGES += \
