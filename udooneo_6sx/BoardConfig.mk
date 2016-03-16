@@ -117,7 +117,44 @@ TARGET_VSYNC_DIRECT_REFRESH := true
 TARGET_UBOOT_VERSION := uboot-imx
 TARGET_BOOTLOADER_CONFIG := imx6sx:udoo_neo_android_defconfig
 TARGET_KERNEL_DEFCONF := udoo_neo_android_defconfig
-TARGET_BOARD_DTS_CONFIG := imx6sx-lvds7:imx6sx-udoo-neo-full-lvds7-m4.dtb imx6sx-hdmi:imx6sx-udoo-neo-full-hdmi-m4.dtb
+TARGET_BOARD_DTS_CONFIG := imx6sx:imx6sx-udoo-neo-full-hdmi-m4.dtb
+
+TARGET_KERNEL_MODULES += \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basic-hdmi-m4.dtb:system/dts/imx6sx-udoo-neo-basic-hdmi-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basic-hdmi.dtb:system/dts/imx6sx-udoo-neo-basic-hdmi.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basic-lvds7-m4.dtb:system/dts/imx6sx-udoo-neo-basic-lvds7-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basic-lvds7.dtb:system/dts/imx6sx-udoo-neo-basic-lvds7.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basic-lvds15-m4.dtb:system/dts/imx6sx-udoo-neo-basic-lvds15-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basic-lvds15.dtb:system/dts/imx6sx-udoo-neo-basic-lvds15.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basic-m4.dtb:system/dts/imx6sx-udoo-neo-basic-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basic.dtb:system/dts/imx6sx-udoo-neo-basic.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basicks-hdmi-m4.dtb:system/dts/imx6sx-udoo-neo-basicks-hdmi-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basicks-hdmi.dtb:system/dts/imx6sx-udoo-neo-basicks-hdmi.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basicks-lvds7-m4.dtb:system/dts/imx6sx-udoo-neo-basicks-lvds7-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basicks-lvds7.dtb:system/dts/imx6sx-udoo-neo-basicks-lvds7.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basicks-lvds15-m4.dtb:system/dts/imx6sx-udoo-neo-basicks-lvds15-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basicks-lvds15.dtb:system/dts/imx6sx-udoo-neo-basicks-lvds15.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basicks-m4.dtb:system/dts/imx6sx-udoo-neo-basicks-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-basicks.dtb:system/dts/imx6sx-udoo-neo-basicks.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-extended-hdmi-m4.dtb:system/dts/imx6sx-udoo-neo-extended-hdmi-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-extended-hdmi.dtb:system/dts/imx6sx-udoo-neo-extended-hdmi.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-extended-lvds7-m4.dtb:system/dts/imx6sx-udoo-neo-extended-lvds7-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-extended-lvds7.dtb:system/dts/imx6sx-udoo-neo-extended-lvds7.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-extended-lvds15-m4.dtb:system/dts/imx6sx-udoo-neo-extended-lvds15-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-extended-lvds15.dtb:system/dts/imx6sx-udoo-neo-extended-lvds15.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-extended-m4.dtb:system/dts/imx6sx-udoo-neo-extended-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-extended.dtb:system/dts/imx6sx-udoo-neo-extended.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-full-hdmi-m4.dtb:system/dts/imx6sx-udoo-neo-full-hdmi-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-full-hdmi.dtb:system/dts/imx6sx-udoo-neo-full-hdmi.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-full-lvds7-m4.dtb:system/dts/imx6sx-udoo-neo-full-lvds7-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-full-lvds7.dtb:system/dts/imx6sx-udoo-neo-full-lvds7.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-full-lvds15-m4.dtb:system/dts/imx6sx-udoo-neo-full-lvds15-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-full-lvds15.dtb:system/dts/imx6sx-udoo-neo-full-lvds15.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-full-m4.dtb:system/dts/imx6sx-udoo-neo-full-m4.dtb \
+	arch/arm/boot/dts/imx6sx-udoo-neo-full.dtb:system/dts/imx6sx-udoo-neo-full.dtb \
+
+PRODUCT_COPY_FILES +=	\
+	device/udoo/udooneo_6sx/uEnv.txt:system/uEnv.txt
 
 BOARD_SEPOLICY_DIRS := \
        device/udoo/imx6/sepolicy \
