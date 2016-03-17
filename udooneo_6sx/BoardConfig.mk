@@ -154,7 +154,8 @@ TARGET_KERNEL_MODULES += \
 	arch/arm/boot/dts/imx6sx-udoo-neo-full.dtb:system/dts/imx6sx-udoo-neo-full.dtb \
 
 PRODUCT_COPY_FILES +=	\
-	device/udoo/udooneo_6sx/uEnv.txt:system/uEnv.txt
+	device/udoo/udooneo_6sx/uEnv.txt:system/uEnv.txt \
+	device/udoo/udooneo_6sx/verifyuenv:system/bin/verifyuenv
 
 BOARD_SEPOLICY_DIRS := \
        device/udoo/imx6/sepolicy \
