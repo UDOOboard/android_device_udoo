@@ -66,7 +66,8 @@ PRODUCT_PACKAGES += \
           StabilityTest \
           setotg \
           lsusb \
-          CMFileManager
+          CMFileManager \
+          AdbWireless
 
 # Broadcom firmwares
 PRODUCT_PACKAGES += \
