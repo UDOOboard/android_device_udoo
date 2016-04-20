@@ -70,8 +70,8 @@ USE_ATHR_GPS_HARDWARE := false
 USE_QEMU_GPS_HARDWARE := false
 
 #for accelerator sensor, need to define sensor type here
-BOARD_HAS_SENSOR := false
-SENSOR_MMA8451 := false
+BOARD_HAS_SENSOR := true
+SENSOR_MMA8451 := true
 
 # for recovery service
 TARGET_SELECT_KEY := 28
@@ -110,8 +110,8 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/udoo/udooneo_6sx/bluetooth
 USE_ION_ALLOCATOR := false
 USE_GPU_ALLOCATOR := true
 
-# camera hal v2
-IMX_CAMERA_HAL_V2 := false
+# camera hal v1
+IMX_CAMERA_HAL_V1 := true
 TARGET_VSYNC_DIRECT_REFRESH := true
 
 TARGET_UBOOT_VERSION := uboot-imx
