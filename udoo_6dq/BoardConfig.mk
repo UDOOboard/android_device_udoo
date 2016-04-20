@@ -53,14 +53,13 @@ BOARD_WPA_SUPPLICANT_DRIVER              := NL80211
 WIFI_DRIVER_STATE_CTRL_PARAM             := true
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB_RALINK  := lib_driver_cmd_ralink
 
-#  BOARD_MODEM_VENDOR := AMAZON
 
 USE_ATHR_GPS_HARDWARE := false
 USE_QEMU_GPS_HARDWARE := false
 
 #for accelerator sensor, need to define sensor type here
-BOARD_HAS_SENSOR := false
-SENSOR_MMA8451 := false
+BOARD_HAS_SENSOR := true
+SENSOR_MMA8451 := true
 
 # for recovery service
 TARGET_SELECT_KEY := 28
@@ -92,7 +91,6 @@ ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
 BOARD_KERNEL_CMDLINE +=  mtdparts=gpmi-nand:16m(bootloader),16m(bootimg),128m(recovery),-(root) gpmi_debug_init ubi.mtd=3
 endif
 
-# Bluedroid bluetooth support, uncomment below to apply
 
 BOARD_HAVE_BLUETOOTH        	:= true
 BOARD_HAVE_BLUETOOTH_USB        := true
@@ -106,11 +104,11 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/udoo/udoo_6dq/bluetooth
 USE_ION_ALLOCATOR := false
 USE_GPU_ALLOCATOR := true
 
-# camera hal v2
-IMX_CAMERA_HAL_V2 := false
+# camera hal v3
+IMX_CAMERA_HAL_V3 := true
 
 #define consumer IR HAL support
-IMX6_CONSUMER_IR_HAL := true
+IMX6_CONSUMER_IR_HAL := false
 
 TARGET_UBOOT_VERSION := uboot-imx
 TARGET_BOOTLOADER_CONFIG := imx6q:udoo_qd_android_config imx6dl:udoo_qd_android_config
@@ -133,27 +131,4 @@ PRODUCT_COPY_FILES +=	\
 BOARD_SEPOLICY_DIRS := \
        device/udoo/imx6/sepolicy \
        device/udoo/udoo_6dq/sepolicy
-
-BOARD_SEPOLICY_UNION := \
-       domain.te \
-       system_app.te \
-       system_server.te \
-       untrusted_app.te \
-       sensors.te \
-       init_shell.te \
-       bluetooth.te \
-       kernel.te \
-       mediaserver.te \
-       file_contexts \
-       genfs_contexts \
-       fs_use  \
-       rild.te \
-       init.te \
-       netd.te \
-       bootanim.te \
-       dnsmasq.te \
-       recovery.te \
-       device.te \
-       zygote.te
-
 

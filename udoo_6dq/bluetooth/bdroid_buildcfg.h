@@ -35,4 +35,6 @@
 #define BTA_AV_SINK_INCLUDED TRUE
 
 #define BLE_PRIVACY_SPT TRUE
+#define BLE_VND_INCLUDED TRUE
+
 #endif
