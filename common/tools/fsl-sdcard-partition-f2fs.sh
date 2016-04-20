@@ -1,11 +1,14 @@
 #!/bin/bash
 
+# android-tools-fsutils should be installed as
+# "sudo apt-get install android-tools-fsutils"
+
 # partition size in MB
 BOOTLOAD_RESERVE=8
-BOOT_ROM_SIZE=8
+BOOT_ROM_SIZE=16
 SYSTEM_ROM_SIZE=512
 CACHE_SIZE=512
-RECOVERY_ROM_SIZE=8
+RECOVERY_ROM_SIZE=16
 DEVICE_SIZE=8
 MISC_SIZE=6
 DATAFOOTER_SIZE=2
@@ -36,6 +39,7 @@ not_format_fs=0
 bootloader_file="u-boot.imx"
 bootimage_file="boot.img"
 systemimage_file="system.img"
+systemimage_raw_file="system_raw.img"
 recoveryimage_file="recovery.img"
 while [ "$moreoptions" = 1 -a $# -gt 0 ]; do
 	case $1 in
@@ -85,7 +89,7 @@ function format_android
     echo "formating android images"
     mkfs.f2fs ${node}${part}4 -l data
     mkfs.ext4 ${node}${part}5 -Lsystem
-    mkfs.ext4 ${node}${part}6 -Lcache
+    mkfs.f2fs ${node}${part}6 -l cache
     mkfs.ext4 ${node}${part}7 -Ldevice
 }
 
@@ -103,7 +107,9 @@ if [ "${flash_images}" -eq "1" ]; then
     dd if=/dev/zero of=${node} bs=1k seek=384 count=129
     dd if=${bootimage_file} of=${node}${part}1
     dd if=${recoveryimage_file} of=${node}${part}2
-    dd if=${systemimage_file} of=${node}${part}5
+    simg2img ${systemimage_file} ${systemimage_raw_file}
+    dd if=${systemimage_raw_file} of=${node}${part}5
+    rm ${systemimage_raw_file}
     dd if=${bootloader_file} of=${node} bs=1k seek=1
     sync
 fi
@@ -114,8 +120,6 @@ if [[ "${not_partition}" -eq "1" && "${flash_images}" -eq "1" ]] ; then
     exit
 fi
 
-# destroy the partition table
-dd if=/dev/zero of=${node} bs=1024 count=1
 
 sfdisk --force -uM ${node} << EOF
 ,${boot_rom_sizeb},83

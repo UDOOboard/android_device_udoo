@@ -20,13 +20,19 @@ PRODUCT_PACKAGES += \
 	CactusPlayer                            \
 	WfdSink                                 \
 	wfd                                     \
-    A2dpSinkApp                             \
+	A2dpSinkApp                             \
+	BleServerEmulator                       \
+	BleClient                               \
 	ethernet                                \
 	libfsl_wfd.so                           \
+	libfsl_wfd                           \
 	fsl.imx.jar                             \
 	libfsl_hdcp_blob.so                     \
+	libfsl_hdcp_blob                     \
 	libstagefright_hdcp.so                  \
+	libstagefright_hdcp                  \
 	hwcomposer_fsl.imx6.so                  \
+	hwcomposer_fsl.imx6                  \
 	VideoEditor				\
 	FSLProfileApp				\
 	FSLProfileService			\
@@ -41,11 +47,12 @@ PRODUCT_PACKAGES += \
 	ip-up-vpn				\
 	ip-up-ppp0				\
 	ip-down-ppp0				\
+	rtl_wpa_supplicant			\
 	wpa_supplicant				\
 	wpa_supplicant.conf			\
 	p2p_supplicant_overlay.conf			\
 	wpa_supplicant_overlay.conf			\
-	p2p_supplicant_advance_overlay.conf \
+    p2p_supplicant_advance_overlay.conf \
 	dispd					\
 	ts_calibrator				\
 	libion                                  \
@@ -58,14 +65,6 @@ PRODUCT_PACKAGES += freescale-extended 		\
 		    freescale-extended.xml
 # Extra Package
 PRODUCT_PACKAGES += \
-          fw_rt \
-          rfkill \
-          iw \
-          iwconfig \
-          iwlist \
-          StabilityTest \
-          setotg \
-          lsusb \
           CMFileManager \
           AdbWireless
 
@@ -88,11 +87,9 @@ PRODUCT_PACKAGES += \
 
 # Wifi AP mode
 PRODUCT_PACKAGES += \
-	iw	 				\
-	hostapd 				\
+	rtl_hostapd 				\
+	hostapd					\
 	hostapd_cli
-
-#	rtl_hostapd
 
 # keyboard mapping files.
 PRODUCT_PACKAGES += \
@@ -135,31 +132,6 @@ PRODUCT_PACKAGES += \
 	vpu_fw_imx6q.bin			\
 	vpu_fw_imx6d.bin			\
 
-#  # Atheros wifi firmwre files.
-#  PRODUCT_PACKAGES += 
-#  	fw-3					
-#  	bdata					
-#  	athtcmd_ram				
-#  	nullTestFlow				
-#  	cfg80211.ko				
-#  	compat.ko				
-#  	ath6kl_sdio.ko				
-#  	check_wifi_mac.sh
-
-# Atheros wifi tool
-# PRODUCT_PACKAGES += \
-# 	abtfilt					\
-# 	artagent				\
-# 	ath6kl-fwlog-record			\
-# 	athtestcmd				\
-# 	psatUtil				\
-# 	wmiconfig
-
-# Intel PCIE wifi firmware
-# PRODUCT_PACKAGES += \
-# 	iwlwifi-6000-4.ucode			\
-# 	iwlwifi-5000-5.ucode			\
-# 	iwlagn.ko
 
 # drm related lib
 PRODUCT_PACKAGES += \
@@ -184,6 +156,7 @@ omx_libs := \
 	fslomx.cfg					\
 	media_profiles.xml				\
 	media_codecs.xml				\
+    media_codecs_performance.xml    \
 	ComponentRegistry.txt				\
 	lib_omx_player_arm11_elinux			 \
 	lib_omx_client_arm11_elinux			\
@@ -255,6 +228,7 @@ omx_libs := \
 	lib_omx_rtps_pipe_arm11_elinux \
 	lib_omx_streaming_parser_arm11_elinux \
 	lib_omx_surface_render_arm11_elinux \
+	lib_omx_surface_source_arm11_elinux \
 	libfsl_jpeg_enc_arm11_elinux \
 	lib_wb_amr_enc_arm11_elinux \
 	lib_wb_amr_dec_arm9_elinux \
@@ -364,14 +338,20 @@ PRODUCT_COPY_FILES +=	\
 	device/udoo/common/display/display_mode_fb4.conf:system/etc/display_mode_fb4.conf \
     device/fsl-proprietary/media-profile/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     device/fsl-proprietary/media-profile/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    device/fsl-proprietary/media-profile/media_profiles_720p.xml:system/etc/media_profiles_720p.xml
+    device/fsl-proprietary/media-profile/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    device/fsl-proprietary/media-profile/media_profiles_720p.xml:system/etc/media_profiles_720p.xml \
+    
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # for property
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
+
+#this must be set before including tablet-7in-hdpi-1024-dalvik-heap.mk
+PRODUCT_PROPERTY_OVERRIDES += \
+        dalvik.vm.heapgrowthlimit=128m
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
         device/udoo/common/security/testkey
