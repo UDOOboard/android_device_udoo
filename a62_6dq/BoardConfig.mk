@@ -48,7 +48,7 @@ BOARD_WLAN_DEVICE                        := rt5370
 WPA_SUPPLICANT_VERSION                   := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER              := NL80211
 # BOARD_HOSTAPD_DRIVER                   := NL80211
-WIFI_DRIVER_STATE_CTRL_PARAM             := true
+# WIFI_DRIVER_STATE_CTRL_PARAM             := false
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB_RALINK  := lib_driver_cmd_ralink
 
 #  BOARD_MODEM_VENDOR := AMAZON
@@ -117,7 +117,7 @@ USE_GPU_ALLOCATOR := true
 IMX_CAMERA_HAL_V2 := false
 
 #define consumer IR HAL support
-IMX6_CONSUMER_IR_HAL := true
+IMX6_CONSUMER_IR_HAL := false
 
 TARGET_UBOOT_VERSION := uboot-imx
 TARGET_BOOTLOADER_CONFIG := imx6q:mx6qd_a62_android_defconfig imx6dl:mx6dl_a62_android_defconfig

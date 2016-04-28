@@ -202,6 +202,8 @@ on property:sys.interactive="active"
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration
     chown system system /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
+
+
 service p2p_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
@@ -240,8 +242,8 @@ service dhcpcd_wlan0 /system/bin/dhcpcd -aABDKL
 
 # virtual sdcard daemon running as media_rw (1023)
 # default 4 threads have better performance to 2 threads.
-    service sdcard /system/bin/sdcard -l -t4 /data/media /mnt/shell/emulated 1023 1023
-    class late_start
+#    service sdcard /system/bin/sdcard -l -t4 /data/media /mnt/shell/emulated 1023 1023
+#    class late_start
 
 on fs
 # mount ext4 partitions

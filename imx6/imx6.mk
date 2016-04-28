@@ -63,10 +63,10 @@ PRODUCT_PACKAGES += \
 #FREESCALE_EXTENDED
 PRODUCT_PACKAGES += freescale-extended 		\
 		    freescale-extended.xml
-# Extra Package
-PRODUCT_PACKAGES += \
-          CMFileManager \
-          AdbWireless
+# # Extra Package
+# PRODUCT_PACKAGES += \
+#          CMFileManager \
+#          AdbWireless
 
 # Broadcom firmwares
 PRODUCT_PACKAGES += \
