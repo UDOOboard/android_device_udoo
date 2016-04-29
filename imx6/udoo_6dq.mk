@@ -75,4 +75,5 @@ PRODUCT_PACKAGES += \
 	xusb \
 	sam3u_benchmark \
 	hotplugtest \
-	stress
+	stress \
+	setotg

@@ -14,7 +14,7 @@ PRODUCT_PACKAGES += \
 	Gallery		    			\
 	SoundRecorder				\
 	Camera					\
-        LegacyCamera                            \
+	LegacyCamera                            \
 	Email					\
 	FSLOta					\
 	CactusPlayer                            \
@@ -52,7 +52,7 @@ PRODUCT_PACKAGES += \
 	wpa_supplicant.conf			\
 	p2p_supplicant_overlay.conf			\
 	wpa_supplicant_overlay.conf			\
-    p2p_supplicant_advance_overlay.conf \
+	p2p_supplicant_advance_overlay.conf \
 	dispd					\
 	ts_calibrator				\
 	libion                                  \
@@ -243,11 +243,11 @@ omx_libs := \
 	lib_flac_parser_arm11_elinux.3.0 \
 	lib_wav_parser_arm11_elinux.3.0 \
 	lib_omx_ac3toiec937_arm11_elinux \
-        lib_omx_ec3_dec_v2_arm11_elinux \
+	lib_omx_ec3_dec_v2_arm11_elinux \
 	lib_omx_libav_video_dec_arm11_elinux \
 	libavcodec \
 	libavutil \
-    libavresample \
+	libavresample \
 	lib_omx_libav_audio_dec_arm11_elinux \
     lib_omx_soft_hevc_dec_arm11_elinux \
     lib_ape_parser_arm11_elinux.3.0 \
@@ -268,12 +268,12 @@ omx_excluded_libs :=					\
 	lib_wma10d_wrap_arm12_elinux_android \
 	lib_aacplusd_wrap_arm12_elinux_android \
 	lib_ac3d_wrap_arm11_elinux_android \
-        lib_ddpd_wrap_arm12_elinux_android \
-        lib_ddplus_dec_v2_arm12_elinux \
-    lib_realad_wrap_arm11_elinux_android \
-    lib_realaudio_dec_v2_arm11_elinux \
-    lib_rm_parser_arm11_elinux.3.0 \
-    lib_omx_ra_dec_v2_arm11_elinux \
+	lib_ddpd_wrap_arm12_elinux_android \
+	lib_ddplus_dec_v2_arm12_elinux \
+	lib_realad_wrap_arm11_elinux_android \
+	lib_realaudio_dec_v2_arm11_elinux \
+	lib_rm_parser_arm11_elinux.3.0 \
+	lib_omx_ra_dec_v2_arm11_elinux \
 
 
 
@@ -301,7 +301,7 @@ PRODUCT_PACKAGES += \
 
 # for CtsVerifier
 PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
+	com.android.future.usb.accessory
 
 PRODUCT_AAPT_CONFIG := normal mdpi
 
@@ -333,15 +333,15 @@ PRODUCT_COPY_FILES +=	\
 	device/udoo/imx6/etc/ueventd.freescale.rc:root/ueventd.freescale.rc \
 	device/udoo/imx6/etc/ppp/init.gprs-pppd:system/etc/ppp/init.gprs-pppd \
 	device/udoo/imx6/etc/ota.conf:system/etc/ota.conf \
-        device/udoo/imx6/init.recovery.imx6.rc:root/init.recovery.imx6.rc \
+	device/udoo/imx6/init.recovery.imx6.rc:root/init.recovery.imx6.rc \
 	device/udoo/common/display/display_mode_fb0.conf:system/etc/display_mode_fb0.conf \
 	device/udoo/common/display/display_mode_fb2.conf:system/etc/display_mode_fb2.conf \
 	device/udoo/common/display/display_mode_fb4.conf:system/etc/display_mode_fb4.conf \
-    device/fsl-proprietary/media-profile/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    device/fsl-proprietary/media-profile/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    device/fsl-proprietary/media-profile/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    device/fsl-proprietary/media-profile/media_profiles_720p.xml:system/etc/media_profiles_720p.xml \
-    
+	device/fsl-proprietary/media-profile/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+	device/fsl-proprietary/media-profile/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+	device/fsl-proprietary/media-profile/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+	device/fsl-proprietary/media-profile/media_profiles_720p.xml:system/etc/media_profiles_720p.xml \
+
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -352,12 +352,12 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 #this must be set before including tablet-7in-hdpi-1024-dalvik-heap.mk
 PRODUCT_PROPERTY_OVERRIDES += \
-        dalvik.vm.heapgrowthlimit=128m
+	dalvik.vm.heapgrowthlimit=128m
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
-        device/udoo/common/security/testkey
+	device/udoo/common/security/testkey
 
-# include a google recommand heap config file.
+# include a google recommend heap config file.
 include frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk
 
 -include device/google/gapps/gapps.mk
