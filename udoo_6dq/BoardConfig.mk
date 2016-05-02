@@ -1,7 +1,3 @@
-#
-# Product-specific compile-time definitions.
-#
-
 include device/udoo/imx6/soc/imx6dq.mk
 include device/udoo/udoo_6dq/build_id.mk
 include device/udoo/imx6/BoardConfigCommon.mk
@@ -10,39 +6,14 @@ include device/fsl-proprietary/gpu-viv/fsl-gpu.mk
 BUILD_TARGET_FS ?= ext4
 include device/udoo/imx6/imx6_target_fs.mk
 
-ifeq ($(BUILD_TARGET_DEVICE),sd)
 ADDITIONAL_BUILD_PROPERTIES += \
-                        ro.boot.storage_type=sd
-ifneq ($(BUILD_TARGET_FS),f2fs)
+	ro.boot.storage_type=sd
 TARGET_RECOVERY_FSTAB = device/udoo/udoo_6dq/fstab_sd.freescale
-# build for ext4
 PRODUCT_COPY_FILES +=	\
 	device/udoo/udoo_6dq/fstab_sd.freescale:root/fstab.freescale
-else
-TARGET_RECOVERY_FSTAB = device/udoo/udoo_6dq/fstab_sd-f2fs.freescale
-# build for f2fs
-PRODUCT_COPY_FILES +=	\
-	device/udoo/udoo_6dq/fstab_sd-f2fs.freescale:root/fstab.freescale
-endif # BUILD_TARGET_FS
-else
-ADDITIONAL_BUILD_PROPERTIES += \
-                        ro.boot.storage_type=emmc
-ifneq ($(BUILD_TARGET_FS),f2fs)
-TARGET_RECOVERY_FSTAB = device/udoo/udoo_6dq/fstab.freescale
-# build for ext4
-PRODUCT_COPY_FILES +=	\
-	device/udoo/udoo_6dq/fstab.freescale:root/fstab.freescale
-else
-TARGET_RECOVERY_FSTAB = device/udoo/udoo_6dq/fstab-f2fs.freescale
-# build for f2fs
-PRODUCT_COPY_FILES +=	\
-	device/udoo/udoo_6dq/fstab-f2fs.freescale:root/fstab.freescale
-endif # BUILD_TARGET_FS
-endif # BUILD_TARGET_DEVICE
 
 ADDITIONAL_BUILD_PROPERTIES += \
-        udoo.enableadk=false
-
+	udoo.enableadk=false
 
 TARGET_BOOTLOADER_BOARD_NAME := UDOO
 PRODUCT_MODEL := UDOO-MX6DQ
