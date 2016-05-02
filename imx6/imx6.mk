@@ -2,8 +2,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
 $(call inherit-product, $(TOPDIR)frameworks/base/data/sounds/AllAudio.mk)
 # overrides
-PRODUCT_BRAND := Freescale
-PRODUCT_MANUFACTURER := Freescale
+PRODUCT_BRAND := UDOO
+PRODUCT_MANUFACTURER := Seco
 
 # Android infrastructures
 PRODUCT_PACKAGES += \
