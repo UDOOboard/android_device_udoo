@@ -40,6 +40,9 @@ PRODUCT_COPY_FILES +=	\
 endif # BUILD_TARGET_FS
 endif # BUILD_TARGET_DEVICE
 
+ADDITIONAL_BUILD_PROPERTIES += \
+        udoo.enableadk=false
+
 
 TARGET_BOOTLOADER_BOARD_NAME := UDOO
 PRODUCT_MODEL := UDOO-MX6DQ
@@ -126,7 +129,8 @@ TARGET_KERNEL_MODULES += \
 
 PRODUCT_COPY_FILES +=	\
 	device/udoo/udoo_6dq/uEnv.txt:system/uEnv.txt \
-	device/udoo/udoo_6dq/verifyuenv:system/bin/verifyuenv
+	device/udoo/udoo_6dq/verifyuenv:system/bin/verifyuenv \
+	device/udoo/udoo_6dq/enableadk:system/bin/enableadk
 
 BOARD_SEPOLICY_DIRS := \
        device/udoo/imx6/sepolicy \

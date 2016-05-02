@@ -1,0 +1,5 @@
+#!/system/bin/sh
+
+echo 128 > /sys/class/gpio/export
+echo 203 > /sys/class/gpio/export
+
