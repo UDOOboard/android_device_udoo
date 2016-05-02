@@ -348,12 +348,12 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # for property
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp \
-	ro.carrier=wifi-only
+	persist.sys.usb.config=mtp
 
 #this must be set before including tablet-7in-hdpi-1024-dalvik-heap.mk
 PRODUCT_PROPERTY_OVERRIDES += \
-	dalvik.vm.heapgrowthlimit=128m
+	dalvik.vm.heapgrowthlimit=128m \
+	ro.carrier=wifi-only
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 	device/udoo/common/security/testkey
