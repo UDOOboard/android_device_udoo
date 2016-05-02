@@ -13,7 +13,7 @@ PRODUCT_COPY_FILES +=	\
 	device/udoo/udoo_6dq/fstab_sd.freescale:root/fstab.freescale
 
 ADDITIONAL_BUILD_PROPERTIES += \
-	udoo.enableadk=false
+	persist.udoo_enable_adk=false
 
 TARGET_BOOTLOADER_BOARD_NAME := UDOO
 PRODUCT_MODEL := UDOO-MX6DQ
