@@ -294,7 +294,7 @@ service verifyuenv /system/bin/verifyuenv
     class main
     oneshot
 
-service enableadk /system/bin/enableadk
+service enableadk /system/bin/enableadk export
     class main
     oneshot
 
