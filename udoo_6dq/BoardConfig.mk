@@ -103,6 +103,11 @@ PRODUCT_COPY_FILES +=	\
 	device/udoo/udoo_6dq/verifyuenv:system/bin/verifyuenv \
 	device/udoo/udoo_6dq/enableadk:system/bin/enableadk
 
+# SuperSU installation
+PRODUCT_COPY_FILES += \
+	device/udoo/common/SuperSU/arm/daemonsu:system/xbin/daemonsu \
+	device/udoo/common/SuperSU/arm/su:system/xbin/su
+
 BOARD_SEPOLICY_DIRS := \
        device/udoo/imx6/sepolicy \
        device/udoo/udoo_6dq/sepolicy
