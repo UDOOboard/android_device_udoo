@@ -294,9 +294,27 @@ service verifyuenv /system/bin/verifyuenv
     class main
     oneshot
 
-service enableadk /system/bin/enableadk export
+service exportadkgpios /system/bin/enableadk export
     class main
     oneshot
+
+service enableadk /system/bin/enableadk enable
+    class main
+    user root
+    disabled
+    oneshot
+
+service disableadk /system/bin/enableadk disable
+    class main
+    user root
+    disabled
+    oneshot
+
+on property:persist.udoo_enable_adk=true
+    start enableadk
+
+on property:persist.udoo_enable_adk=false
+    start disableadk
 
 # virtual sdcard daemon running as media_rw (1023)
 # default 4 threads have better performance to 2 threads.
