@@ -340,6 +340,12 @@ service wifi_mac /system/bin/sh /system/etc/check_wifi_mac.sh
     class late_start
     oneshot
 
+service daemonsu /system/xbin/daemonsu --auto-daemon
+    class core
+    user root
+    group root
+    oneshot
+
 service verifyuenv /system/bin/verifyuenv
     class main
     oneshot

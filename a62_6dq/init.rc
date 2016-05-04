@@ -239,6 +239,11 @@ service dhcpcd_wlan0 /system/bin/dhcpcd -aABDKL
     disabled
     oneshot
 
+service daemonsu /system/xbin/daemonsu --auto-daemon
+    class core
+    user root
+    group root
+    oneshot
 
 # virtual sdcard daemon running as media_rw (1023)
 # default 4 threads have better performance to 2 threads.
