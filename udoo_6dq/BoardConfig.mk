@@ -89,7 +89,7 @@ TARGET_BOOTLOADER_CONFIG := imx6q:udoo_qd_android_config imx6dl:udoo_qd_android_
 TARGET_BOARD_DTS_CONFIG := imx6q:imx6q-udoo-hdmi.dtb imx6dl:imx6dl-udoo-hdmi.dtb
 
 TARGET_KERNEL_VERSION := kernel_imx
-TARGET_KERNEL_DEFCONF := imx_v7_android_UDOO_defconfig
+TARGET_KERNEL_DEFCONF := udoo_quad_dual_android_defconfig
 TARGET_KERNEL_MODULES += \
 	arch/arm/boot/dts/imx6dl-udoo-hdmi.dtb:system/dts/imx6dl-udoo-hdmi.dtb \
 	arch/arm/boot/dts/imx6dl-udoo-lvds7.dtb:system/dts/imx6dl-udoo-lvds7.dtb \
