@@ -126,10 +126,6 @@ TARGET_KERNEL_DEFCONF := imx_v7_android_A62_defconfig
 TARGET_BOARD_DTS_CONFIG := imx6q:imx6q-seco_A62.dtb imx6dl:imx6dl-seco_A62.dtb
 #   TARGET_BOOTLOADER_ENV := DDR_SIZE=2 DDR_TYPE=1 BOARD_TYPE=A62 CPU_TYPE=DUAL_LITE ENV_DEVICE=ENV_SPI OPT_UART= OPT_SERIAL_DEBUG= OPT_RTC= OPT_RTC_EXT=
 
-# SuperSU installation
-PRODUCT_COPY_FILES += \
-        device/udoo/common/SuperSU/arm/daemonsu:system/xbin/daemonsu \
-        device/udoo/common/SuperSU/arm/su:system/xbin/su
 
 BOARD_SEPOLICY_DIRS := \
        device/udoo/imx6/sepolicy \

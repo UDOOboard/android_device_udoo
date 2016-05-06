@@ -1,7 +1,3 @@
-#
-# Product-specific compile-time definitions.
-#
-
 TARGET_BOARD_PLATFORM := imx6
 TARGET_BOARD_VENDOR := udoo
 TARGET_CPU_ABI := armeabi-v7a
@@ -98,5 +94,13 @@ ADDITIONAL_BUILD_PROPERTIES += \
     ro.FSL_FLAC_PARSER=1 \
     ro.FSL_MPG2_PARSER=1 \
     ro.FSL_REAL_PARSER=0 \
+
+# SuperSU installation
+PRODUCT_COPY_FILES += \
+	device/udoo/common/SuperSU/arm/su:system/xbin/daemonsu \
+	device/udoo/common/SuperSU/arm/su:system/xbin/su \
+	device/udoo/common/SuperSU/arm/su:system/xbin/sugote \
+	device/udoo/common/SuperSU/arm/supolicy:system/xbin/supolicy \
+	device/udoo/common/SuperSU/arm/libsupol.so:system/lib/libsupol.so
 
 -include device/google/gapps/gapps_config.mk

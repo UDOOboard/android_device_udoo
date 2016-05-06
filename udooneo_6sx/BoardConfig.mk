@@ -157,11 +157,6 @@ PRODUCT_COPY_FILES +=	\
 	device/udoo/udooneo_6sx/uEnv.txt:system/uEnv.txt \
 	device/udoo/udooneo_6sx/verifyuenv:system/bin/verifyuenv
 
-# SuperSU installation
-PRODUCT_COPY_FILES += \
-        device/udoo/common/SuperSU/arm/daemonsu:system/xbin/daemonsu \
-        device/udoo/common/SuperSU/arm/su:system/xbin/su
-
 BOARD_SEPOLICY_DIRS := \
        device/udoo/imx6/sepolicy \
        device/udoo/udooneo_6sx/sepolicy
