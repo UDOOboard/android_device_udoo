@@ -300,10 +300,6 @@ service verifyuenv /system/bin/verifyuenv
     class main
     oneshot
 
-service exportadkgpios /system/bin/enableadk export
-    class main
-    oneshot
-
 service enableadk /system/bin/enableadk enable
     class main
     user root

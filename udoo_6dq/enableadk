@@ -1,33 +1,24 @@
 #!/system/bin/sh
 
 case $1 in
-	export)
+	disable)
+		# use CN3 as USB OTG
 		echo 128 > /sys/class/gpio/export
 		echo 203 > /sys/class/gpio/export
 		echo out > /sys/class/gpio/gpio128/direction
 		echo out > /sys/class/gpio/gpio203/direction
-
-		is_enabled=`getprop persist.udoo_enable_adk`
-		if [ $is_enabled = "true" ]; then
-			echo 1 > /sys/class/gpio/gpio128/value
-			echo 1 > /sys/class/gpio/gpio203/value
-		else
-			echo 0 > /sys/class/gpio/gpio128/value
-			echo 0 > /sys/class/gpio/gpio203/value
-		fi
-
 		echo 0 > /sys/class/gpio/gpio128/value
 		echo 0 > /sys/class/gpio/gpio203/value
 		exit 0
 		;;
-	disable)
-		# use CN3 as USB OTG
-		echo 0 > /sys/class/gpio/gpio128/value
-		echo 0 > /sys/class/gpio/gpio203/value
-		;;
 	enable)
 		# disable CN3 for ADK
+		echo 128 > /sys/class/gpio/export
+		echo 203 > /sys/class/gpio/export
+		echo out > /sys/class/gpio/gpio128/direction
+		echo out > /sys/class/gpio/gpio203/direction
 		echo 1 > /sys/class/gpio/gpio128/value
 		echo 1 > /sys/class/gpio/gpio203/value
+		exit 0
 		;;
 esac
