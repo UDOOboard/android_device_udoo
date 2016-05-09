@@ -67,7 +67,8 @@ PRODUCT_PACKAGES += freescale-extended 		\
 PRODUCT_PACKAGES += \
 	CMFileManager \
 	AdbWireless \
-	SuperSU
+	SuperSU \
+	Terminal
 
 # Broadcom firmwares
 PRODUCT_PACKAGES += \
