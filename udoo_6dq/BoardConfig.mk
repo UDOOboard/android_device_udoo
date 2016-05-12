@@ -20,7 +20,7 @@ PRODUCT_MODEL := UDOO-MX6DQ
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/udoo/imx6
 
-BOARD_WLAN_DEVICE                        := rt5370
+BOARD_WLAN_DEVICE                        := RALINK
 WPA_SUPPLICANT_VERSION                   := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER              := NL80211
 # BOARD_HOSTAPD_DRIVER                   := NL80211
