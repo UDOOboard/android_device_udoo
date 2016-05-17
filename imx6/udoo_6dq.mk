@@ -70,10 +70,4 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
 	AudioRoute \
-	listdevs \
-	fxload \
-	xusb \
-	sam3u_benchmark \
-	hotplugtest \
-	stress \
 	setotg
