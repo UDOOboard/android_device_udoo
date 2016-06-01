@@ -126,8 +126,7 @@ TARGET_KERNEL_MODULES += \
 	arch/arm/boot/dts/imx6q-seco_A62.dtb:system/dts/imx6q-a62-lvds15.dtb \
 
 PRODUCT_COPY_FILES +=	\
-	device/udoo/a62_6dq/uEnv.txt:system/uEnv.txt \
-	device/udoo/a62_6dq/verifyuenv:system/bin/verifyuenv
+	device/udoo/a62_6dq/uEnv.txt:system/uEnv.txt
 
 BOARD_SEPOLICY_DIRS := \
 	device/udoo/imx6/sepolicy \

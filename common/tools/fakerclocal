@@ -9,5 +9,5 @@ fi
 
 #prevent SSL certificates warnings
 if [ `date +"%Y"` -eq "1970" ]; then
-    date --set="2016-01-01"
+    date 010100002016 #MMDDhhmmYYYY
 fi

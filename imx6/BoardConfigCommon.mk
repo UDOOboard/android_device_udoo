@@ -101,6 +101,7 @@ PRODUCT_COPY_FILES += \
 	device/udoo/common/SuperSU/arm/su:system/xbin/su \
 	device/udoo/common/SuperSU/arm/su:system/xbin/sugote \
 	device/udoo/common/SuperSU/arm/supolicy:system/xbin/supolicy \
+	device/udoo/common/tools/fakerclocal:system/bin/fakerclocal \
 	device/udoo/common/SuperSU/arm/libsupol.so:system/lib/libsupol.so
 
 -include device/google/gapps/gapps_config.mk
