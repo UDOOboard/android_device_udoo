@@ -101,7 +101,7 @@ TARGET_KERNEL_MODULES += \
 
 PRODUCT_COPY_FILES +=	\
 	device/udoo/udoo_6dq/uEnv.txt:system/uEnv.txt \
-	device/udoo/udoo_6dq/verifyuenv:system/bin/verifyuenv \
+	device/udoo/udoo_6dq/fakerclocal:system/bin/fakerclocal \
 	device/udoo/udoo_6dq/enableadk:system/bin/enableadk
 
 

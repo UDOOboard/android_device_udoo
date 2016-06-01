@@ -1,0 +1,13 @@
+#!/system/xbin/bash
+
+#copy a dist uEnv.txt from /system to /data
+if [ ! -f /data/uEnv.txt ]; then
+    echo "Creating /data/uEnv.txt"
+    cp /system/uEnv.txt /data/uEnv.txt
+    chmod 666 /data/uEnv.txt
+fi
+
+#prevent SSL certificates warnings
+if [ `date +"%Y"` -eq "1970" ]; then
+    date --set="2016-01-01"
+fi

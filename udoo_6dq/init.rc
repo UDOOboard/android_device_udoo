@@ -297,7 +297,7 @@ service daemonsu /system/xbin/daemonsu --auto-daemon
     group root
     oneshot
 
-service verifyuenv /system/bin/verifyuenv
+service fakerclocal /system/bin/fakerclocal
     class main
     oneshot
 

@@ -1,8 +1,0 @@
-#!/system/bin/sh
-
-if [ ! -f /data/uEnv.txt ]; then
-    echo "Creating /data/uEnv.txt"
-    cp /system/uEnv.txt /data/uEnv.txt
-    chmod 666 /data/uEnv.txt
-fi
-
