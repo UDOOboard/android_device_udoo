@@ -44,6 +44,9 @@ endif # BUILD_TARGET_DEVICE
 TARGET_BOOTLOADER_BOARD_NAME := A62
 PRODUCT_MODEL := A62-MX6DQ
 
+ADDITIONAL_BUILD_PROPERTIES += \
+	       persist.audio.device=alc655-audio
+
 TARGET_RELEASETOOLS_EXTENSIONS := device/udoo/imx6
 BOARD_WLAN_DEVICE                        := RALINK
 WPA_SUPPLICANT_VERSION                   := VER_0_8_X
@@ -79,13 +82,7 @@ $(error "TARGET_USERIMAGES_USE_UBIFS and TARGET_USERIMAGES_USE_EXT4 config open 
 endif
 endif
 
-# Kernel command lines with different video outputs configuration, to choose an appropriate one.
- 
 BOARD_KERNEL_CMDLINE := console=ttymxc1,115200 init=/init video=mxcfb0:dev=ldb,bpp=32 video=mxcfb1:dev=hdmi,1920x1080M@60,bpp=32 video=mxcfb2:off video=mxcfb3:off vmalloc=256M androidboot.console=ttymxc1 consoleblank=0 androidboot.hardware=freescale cma=384M androidboot.selinux=disabled androidboot.dm_verity=disabled no_console_suspend  
-
-# BOARD_KERNEL_CMDLINE := console=ttymxc1,115200 init=/init video=mxcfb0:dev=ldb,bpp=32 video=mxcfb1:off video=mxcfb2:off video=mxcfb3:off vmalloc=256M androidboot.console=ttymxc1 consoleblank=0 androidboot.hardware=freescale cma=384M androidboot.selinux=disabled androidboot.dm_verity=disabled no_console_suspend
-
-#BOARD_KERNEL_CMDLINE := setenv bootargs console=ttymxc1,115200 androidboot.console=ttymxc1 consoleblank=0 vmalloc=256M init=/init video=mxcfb0:dev=hdmi,1920x1080M@60,bpp=32 video=mxcfb1:off video=mxcfb2:off video=mxcfb3:off androidboot.hardware=freescale cma=384M androidboot.selinux=disabled androidboot.dm_verity=disabled no_console_suspend
 
 ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
 #UBI boot command line.
@@ -97,8 +94,9 @@ endif
 
 BOARD_HAVE_BLUETOOTH        	:= true
 BOARD_HAVE_BLUETOOTH_USB        := true
-BLUETOOTH_HCI_USE_USB 		:= true
 BOARD_HAVE_BLUETOOTH_BCM        := true
+BLUETOOTH_HCI_USE_USB 		:= true
+
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL     := true
 BLUETOOTH_HCI_USE_MCT                   := false
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/udoo/a62_6dq/bluetooth
@@ -107,19 +105,31 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/udoo/a62_6dq/bluetooth
 USE_ION_ALLOCATOR := false
 USE_GPU_ALLOCATOR := true
 
-# camera hal v2
-IMX_CAMERA_HAL_V2 := false
+# camera hal v3
+IMX_CAMERA_HAL_V3 := false
 
 #define consumer IR HAL support
 IMX6_CONSUMER_IR_HAL := false
 
 TARGET_UBOOT_VERSION := uboot-imx
-TARGET_BOOTLOADER_CONFIG := imx6q:mx6qdl_a62_android_defconfig imx6dl:mx6qdl_a62_android_defconfig
-TARGET_KERNEL_VERSION := kernel_imx
-TARGET_KERNEL_DEFCONF := imx_v7_android_A62_defconfig
+TARGET_BOOTLOADER_CONFIG := imx6q:mx6qdl_a62_android_defconfig 
 TARGET_BOARD_DTS_CONFIG := imx6q:imx6q-seco_A62.dtb imx6dl:imx6dl-seco_A62.dtb
 
+TARGET_KERNEL_VERSION := kernel_imx
+TARGET_KERNEL_DEFCONF := imx_v7_android_A62_defconfig
+TARGET_KERNEL_MODULES += \
+	arch/arm/boot/dts/imx6dl-seco_A62.dtb:system/dts/imx6dl-a62-hdmi.dtb \
+	arch/arm/boot/dts/imx6dl-seco_A62.dtb:system/dts/imx6dl-a62-lvds7.dtb \
+	arch/arm/boot/dts/imx6dl-seco_A62.dtb:system/dts/imx6dl-a62-lvds15.dtb \
+	arch/arm/boot/dts/imx6q-seco_A62.dtb:system/dts/imx6q-a62-hdmi.dtb \
+	arch/arm/boot/dts/imx6q-seco_A62.dtb:system/dts/imx6q-a62-lvds7.dtb \
+	arch/arm/boot/dts/imx6q-seco_A62.dtb:system/dts/imx6q-a62-lvds15.dtb \
+
+PRODUCT_COPY_FILES +=	\
+	device/udoo/a62_6dq/uEnv.txt:system/uEnv.txt \
+	device/udoo/a62_6dq/verifyuenv:system/bin/verifyuenv
+
 BOARD_SEPOLICY_DIRS := \
-       device/udoo/imx6/sepolicy \
-       device/udoo/a62_6dq/sepolicy
+	device/udoo/imx6/sepolicy \
+	device/udoo/a62_6dq/sepolicy
 
