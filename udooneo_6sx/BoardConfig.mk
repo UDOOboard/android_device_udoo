@@ -104,6 +104,14 @@ BOARD_KERNEL_CMDLINE +=  mtdparts=gpmi-nand:16m(bootloader),16m(bootimg),128m(re
 endif
 
 
+# Low RAM
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.config.low_ram=true \
+	config.disable_atlas=true \
+	dalvik.vm.jit.codecachesize=0 \
+	ro.config.max_starting_bg=8 \
+	ro.sys.fw.bg_apps_limit=16
+
 BOARD_HAVE_BLUETOOTH_BCM := false
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/udoo/udooneo_6sx/bluetooth
 
