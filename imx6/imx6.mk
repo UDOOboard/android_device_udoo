@@ -354,6 +354,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 #this must be set before including tablet-7in-hdpi-1024-dalvik-heap.mk
 PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.heapgrowthlimit=128m \
+	ro.radio.noril=yes \
 	ro.carrier=wifi-only
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
