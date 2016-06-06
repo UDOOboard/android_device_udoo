@@ -110,7 +110,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	config.disable_atlas=true \
 	dalvik.vm.jit.codecachesize=0 \
 	ro.config.max_starting_bg=8 \
-	ro.sys.fw.bg_apps_limit=16
+	ro.sys.fw.bg_apps_limit=16 \
+	ro.config.dha_cached_max=9 \
+	ro.config.dha_lmk_scale=1.5 \
+	ro.config.sdha_apps_bg_max=50
 
 BOARD_HAVE_BLUETOOTH_BCM := false
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/udoo/udooneo_6sx/bluetooth
