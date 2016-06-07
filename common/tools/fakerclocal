@@ -1,5 +1,17 @@
 #!/system/xbin/bash
 
+#set LCD density
+DENSITY=160
+for x in $(cat /proc/cmdline); do
+    case "$x" in
+        android.lcd_density=*)
+        echo "${x#android.lcd_density=}"
+	DENSITY=${x#android.lcd_density=}
+        ;;
+    esac
+done
+setprop ro.sf.lcd_density $DENSITY
+
 #copy a dist uEnv.txt from /system to /data
 if [ ! -f /data/uEnv.txt ]; then
     echo "Creating /data/uEnv.txt"
