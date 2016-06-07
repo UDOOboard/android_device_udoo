@@ -18,5 +18,5 @@
 # (like "CRB01").  It must be a single word, and is
 # capitalized by convention.
 
-export BUILD_ID=1.0.0-ga-rc6
-export BUILD_NUMBER=20160331
+export BUILD_ID=6.0.1-beta2
+export BUILD_NUMBER=20160607
