@@ -86,8 +86,8 @@ IMX_CAMERA_HAL_V3 := true
 IMX6_CONSUMER_IR_HAL := false
 
 TARGET_UBOOT_VERSION := uboot-imx
-TARGET_BOOTLOADER_CONFIG := imx6q:udoo_qd_android_config imx6dl:udoo_qd_android_config
-TARGET_BOARD_DTS_CONFIG := imx6q:imx6q-udoo-hdmi.dtb imx6dl:imx6dl-udoo-hdmi.dtb
+TARGET_BOOTLOADER_CONFIG := imx6q:udoo_qd_android_config
+TARGET_BOARD_DTS_CONFIG := imx6q:imx6q-udoo-hdmi.dtb
 
 TARGET_KERNEL_VERSION := kernel_imx
 TARGET_KERNEL_DEFCONF := udoo_quad_dual_android_defconfig
