@@ -33,6 +33,8 @@ on init
 
 on boot
 
+    exec /system/bin/fakerclocal
+
     # emmulate battery property
     setprop sys.emulated.battery 1
 
@@ -88,8 +90,7 @@ on boot
     setprop gsm.ril.delay 15
     setprop ro.ril.wake_lock_timeout 300
 
-
-#  Enable adb security for JB4.2.2
+    # Enable adb security for JB4.2.2
     setprop ro.adb.secure 1
 
     # Set rotation to 270 to cofigure as portrait mode
@@ -291,10 +292,6 @@ service daemonsu /system/xbin/daemonsu --auto-daemon
     class core
     user root
     group root
-    oneshot
-
-service fakerclocal /system/bin/fakerclocal
-    class main
     oneshot
 
 service enableadk /system/bin/enableadk enable
