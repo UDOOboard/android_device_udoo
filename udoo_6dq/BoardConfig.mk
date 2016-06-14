@@ -10,9 +10,7 @@ ADDITIONAL_BUILD_PROPERTIES += \
 	ro.boot.storage_type=sd
 TARGET_RECOVERY_FSTAB = device/udoo/udoo_6dq/fstab_sd.freescale
 PRODUCT_COPY_FILES +=	\
-	device/udoo/udoo_6dq/fstab_sd.freescale:root/fstab.freescale	\ 
-	device/udoo/udoo_6dq/bin/Vendor_04d8_Product_f724.idc:system/usr/idc/Vendor_04d8_Product_f724.idc	\
-	device/udoo/udoo_6dq/bin/Vendor_0eef_Product_a107.idc:system/usr/idc/Vendor_0eef_Product_a107.idc
+	device/udoo/udoo_6dq/fstab_sd.freescale:root/fstab.freescale
 
 ADDITIONAL_BUILD_PROPERTIES += \
 	persist.udoo_enable_adk=false
@@ -105,6 +103,9 @@ PRODUCT_COPY_FILES +=	\
 	device/udoo/udoo_6dq/uEnv.txt:system/uEnv.txt \
 	device/udoo/udoo_6dq/enableadk:system/bin/enableadk
 
+PRODUCT_COPY_FILES +=	\
+	device/udoo/udoo_6dq/bin/Vendor_04d8_Product_f724.idc:system/usr/idc/Vendor_04d8_Product_f724.idc \
+	device/udoo/udoo_6dq/bin/Vendor_0eef_Product_a107.idc:system/usr/idc/Vendor_0eef_Product_a107.idc
 
 BOARD_SEPOLICY_DIRS := \
 	device/udoo/imx6/sepolicy \
