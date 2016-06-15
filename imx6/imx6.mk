@@ -328,6 +328,7 @@ PRODUCT_COPY_FILES +=	\
 	device/udoo/common/input/eGalax_Touch_Screen.idc:system/usr/idc/HannStar_P1003_Touchscreen.idc \
 	device/udoo/common/input/eGalax_Touch_Screen.idc:system/usr/idc/Novatek_NT11003_Touch_Screen.idc \
 	device/udoo/common/input/sitronix_Touch_Screen.idc:system/usr/idc/st1232-touchscreen.idc \
+	device/udoo/common/input/Vendor_0596_Product_0001.idc:system/usr/idc/Vendor_0596_Product_0001.idc \
 	device/udoo/common/input/Vendor_04d8_Product_f724.idc:system/usr/idc/Vendor_04d8_Product_f724.idc \
 	device/udoo/common/input/Vendor_0eef_Product_a107.idc:system/usr/idc/Vendor_0eef_Product_a107.idc \
 	system/core/rootdir/init.rc:root/init.rc \
