@@ -8,9 +8,9 @@ include device/udoo/imx6/imx6_target_fs.mk
 
 ADDITIONAL_BUILD_PROPERTIES += \
 	ro.boot.storage_type=sd
-TARGET_RECOVERY_FSTAB = device/udoo/udoo_6dq/fstab_sd.freescale
+TARGET_RECOVERY_FSTAB = device/udoo/udoo_6dq/fstab.freescale
 PRODUCT_COPY_FILES += \
-	device/udoo/udoo_6dq/fstab_sd.freescale:root/fstab.freescale
+	device/udoo/udoo_6dq/fstab.freescale:root/fstab.freescale
 
 ADDITIONAL_BUILD_PROPERTIES += \
 	persist.udoo_enable_adk=false
