@@ -14,3 +14,9 @@ on boot
 
     # disable front camera support.
     setprop front_camera_name 0
+
+on property:sys.adb.net=1
+    setprop service.adb.tcp.port 5555
+    stop adbd
+    start adbd
+
