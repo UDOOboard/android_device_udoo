@@ -14,9 +14,9 @@ PRODUCT_DEVICE := udoo_6dq
 BUILD_TARGET_DEVICE := sd
 
 PRODUCT_COPY_FILES += \
+	device/udoo/imx6/init.i.MX6Q.rc:root/init.freescale.i.MX6Q.rc \
+	device/udoo/imx6/init.i.MX6DL.rc:root/init.freescale.i.MX6DL.rc \
 	device/udoo/udoo_6dq/init.rc:root/init.freescale.rc \
-	device/udoo/udoo_6dq/init.i.MX6Q.rc:root/init.freescale.i.MX6Q.rc \
-	device/udoo/udoo_6dq/init.i.MX6DL.rc:root/init.freescale.i.MX6DL.rc \
 	device/udoo/udoo_6dq/audio_policy.conf:system/etc/audio_policy.conf \
 	device/udoo/udoo_6dq/audio_effects.conf:system/vendor/etc/audio_effects.conf
 	
