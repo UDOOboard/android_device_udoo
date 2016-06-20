@@ -9,4 +9,12 @@
         <item>LVDS 7</item>
 	<item>HDMI</item>
     </string-array>
+
+    <string-array name="audio_device_entries">
+        <item>HDMI</item>
+    </string-array>
+
+    <string-array name="audio_device_values">
+        <item>imx-tda19988</item>
+    </string-array>
 </resources>
