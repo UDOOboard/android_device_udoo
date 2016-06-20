@@ -43,7 +43,8 @@ else
 endif
 
 PRODUCT_PACKAGES += \
-	libbt-vendor		\
+	libusb		\
+	libbt-vendor	\
 	audio.primary.dummy
 
 # GPU files
