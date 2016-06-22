@@ -38,7 +38,8 @@ else
 endif
 
 PRODUCT_PACKAGES += \
-	libbt-vendor-usb
+	libusb		\
+	libbt-vendor	
 
 # GPU files
 

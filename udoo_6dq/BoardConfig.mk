@@ -68,7 +68,7 @@ endif
 
 BOARD_HAVE_BLUETOOTH        	:= true
 BOARD_HAVE_BLUETOOTH_USB        := true
-BOARD_HAVE_BLUETOOTH_BCM        := true
+BOARD_HAVE_BLUETOOTH_BCM        := false
 BLUETOOTH_HCI_USE_USB 		:= true
 
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL     := true
