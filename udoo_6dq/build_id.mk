@@ -19,4 +19,4 @@
 # capitalized by convention.
 
 export BUILD_ID=6.0.1-beta2
-export BUILD_NUMBER=20160607
+export BUILD_NUMBER=20160622
