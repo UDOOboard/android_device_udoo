@@ -33,6 +33,7 @@
 
 /*Enable A2dp Sink */
 #define BTA_AV_SINK_INCLUDED TRUE
+#define BTM_SCO_INCLUDED     FALSE
 
 #define BLE_PRIVACY_SPT  TRUE
 #define BLE_VND_INCLUDED FALSE
