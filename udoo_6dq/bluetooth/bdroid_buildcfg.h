@@ -19,7 +19,7 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME "iMX6"
+#define BTM_DEF_LOCAL_NAME "uDOO-iMX6"
 
 // Networking, Capturing, Object Transfer
 // MAJOR CLASS: COMPUTER
