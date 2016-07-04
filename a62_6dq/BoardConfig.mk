@@ -17,7 +17,10 @@ ifneq ($(BUILD_TARGET_FS),f2fs)
 TARGET_RECOVERY_FSTAB = device/udoo/a62_6dq/fstab_sd.freescale
 # build for ext4
 PRODUCT_COPY_FILES +=	\
-	device/udoo/a62_6dq/fstab_sd.freescale:root/fstab.freescale
+	device/udoo/a62_6dq/fstab_emmc.freescale:root/fstab.freescale  \
+	device/udoo/a62_6dq/fstab_sd.freescale:root/fstab.freescale.sd \
+	device/udoo/a62_6dq/fstab_emmc.freescale:root/fstab.freescale.emmc \
+	device/udoo/a62_6dq/fstab_sata.freescale:root/fstab.freescale.sata
 else
 TARGET_RECOVERY_FSTAB = device/udoo/a62_6dq/fstab_sd-f2fs.freescale
 # build for f2fs
