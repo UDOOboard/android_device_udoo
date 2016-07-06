@@ -122,8 +122,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/udoo/udooneo_6sx/bluetooth
 USE_ION_ALLOCATOR := false
 USE_GPU_ALLOCATOR := true
 
-# camera hal v1
-IMX_CAMERA_HAL_V1 := true
+BOARD_HAVE_IMX_CAMERA := false
 TARGET_VSYNC_DIRECT_REFRESH := true
 
 TARGET_UBOOT_VERSION := uboot-imx

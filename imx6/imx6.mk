@@ -13,8 +13,6 @@ PRODUCT_PACKAGES += \
 	Gallery2				\
 	Gallery		    			\
 	SoundRecorder				\
-	Camera					\
-	LegacyCamera                            \
 	Email					\
 	FSLOta					\
 	CactusPlayer                            \

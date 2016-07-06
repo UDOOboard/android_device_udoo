@@ -38,8 +38,10 @@ else
 endif
 
 PRODUCT_PACKAGES += \
-	libusb		\
-	libbt-vendor	
+	Camera			\
+	LegacyCamera	\
+	libusb			\
+	libbt-vendor
 
 # GPU files
 

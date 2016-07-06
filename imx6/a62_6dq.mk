@@ -43,7 +43,9 @@ else
 endif
 
 PRODUCT_PACKAGES += \
-	libusb		\
+	Camera			\
+	LegacyCamera	\
+	libusb			\
 	libbt-vendor	\
 	audio.primary.dummy
 
