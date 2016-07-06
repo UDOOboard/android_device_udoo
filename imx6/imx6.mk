@@ -81,6 +81,7 @@ PRODUCT_PACKAGES += \
 	busybox					\
 	bash					\
 	taskset					\
+	iw     					\
 	sqlite3					\
 	libefence				\
 	powerdebug
