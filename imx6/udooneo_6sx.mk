@@ -25,7 +25,8 @@ PRODUCT_COPY_FILES += \
  $(call inherit-product, build/target/product/verity.mk)
 
 PRODUCT_PACKAGES += \
-	libbt-vendor
+	libbt-vendor \
+	uim-sysfs
 
 # GPU files
 
@@ -36,6 +37,7 @@ PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_AAPT_CONFIG += xlarge large tvdpi hdpi
 
 PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
 	frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
 	frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
 	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
@@ -45,6 +47,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
 	frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
 	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+	frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
 	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
 	frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
 	device/udoo/udooneo_6sx/required_hardware.xml:system/etc/permissions/required_hardware.xml

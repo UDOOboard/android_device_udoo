@@ -19,7 +19,7 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME "iMX6"
+#define BTM_DEF_LOCAL_NAME "udooNeo-iMX6"
 
 // Networking, Capturing, Object Transfer
 // MAJOR CLASS: COMPUTER
@@ -35,6 +35,6 @@
 #define BTA_AV_SINK_INCLUDED TRUE
 
 #define BLE_PRIVACY_SPT TRUE
-#define BLE_VND_INCLUDED TRUE
+#define BLE_VND_INCLUDED FALSE
 
 #endif

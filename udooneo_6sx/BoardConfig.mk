@@ -33,6 +33,8 @@ COMMON_GLOBAL_CFLAGS += -DUSES_TI_MAC80211
 COMMON_GLOBAL_CFLAGS += -DANDROID_P2P_STUB
 
 TARGET_KERNEL_MODULES       := \
+                                drivers/misc/ti-st/st_drv.ko:system/lib/modules/st_drv.ko   \
+                                drivers/misc/ti-st/tty_hci.ko:system/lib/modules/tty_hci.ko \
                                 backports/net/mac80211/mac80211.ko:system/lib/modules/mac80211.ko \
                                 backports/net/wireless/cfg80211.ko:system/lib/modules/cfg80211.ko \
 				backports/drivers/net/wireless/ti/wl12xx/wl12xx.ko:system/lib/modules/wl12xx.ko \
