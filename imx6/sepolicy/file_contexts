@@ -19,8 +19,8 @@
 /dev/galcore                    u:object_r:gpu_device:s0
 /dev/sda[0-8]*			u:object_r:sdcard_internal:s0
 /dev/caam_kb                    u:object_r:caam_device:s0
-
-
+/dev/hci_tty                    u:object_r:hci_attach_dev:s0
+/system/bin/uim-sysfs           u:object_r:hci_attach_exec:s0
 /dev/block/mmcblk[0-9]p2 		u:object_r:recovery_block_device:s0
 /dev/block/mmcblk[0-9]p1 		u:object_r:boot_block_device:s0
 /dev/block/mmcblk[0-9]p5 		u:object_r:system_block_device:s0

@@ -20,7 +20,8 @@ ifneq ($(BUILD_TARGET_FS),f2fs)
 TARGET_RECOVERY_FSTAB = device/udoo/udooneo_6sx/fstab.freescale
 # build for ext4
 PRODUCT_COPY_FILES +=	\
-	device/udoo/udooneo_6sx/fstab.freescale:root/fstab.freescale
+	device/udoo/udooneo_6sx/fstab.freescale:root/fstab.freescale  \
+	device/udoo/udooneo_6sx/fstab_sd.freescale:root/fstab.freescale.sd
 else
 TARGET_RECOVERY_FSTAB = device/udoo/udooneo_6sx/fstab-f2fs.freescale
 # build for f2fs

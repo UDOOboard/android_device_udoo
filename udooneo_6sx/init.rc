@@ -1,4 +1,5 @@
 import init.${ro.hardware}.usb.rc
+import init.${ro.hardware}.${ro.soc}.rc
 
 on early-init
     # mount the debugfs
@@ -27,6 +28,8 @@ on init
     # deattch the fbcon as hdmi hotplug conflict with fbcon
     write /sys/class/vtconsole/vtcon1/bind 0
 
+    # USBkey available under /mnt/usbdrive path
+    symlink /mnt/media_rw/udisk /mnt/usbdrive
 
 on boot
 
@@ -166,7 +169,6 @@ on charger
     write /sys/devices/system/cpu/cpu1/online 0
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
-
 
 on property:sys.boot_completed=1
 # Set default CPU frequency governor
@@ -346,8 +348,8 @@ service daemonsu /system/xbin/daemonsu --auto-daemon
 
 # virtual sdcard daemon running as media_rw (1023)
 # default 4 threads have better performance to 2 threads.
-    service sdcard /system/bin/sdcard -l -t4 /data/media /mnt/shell/emulated 1023 1023
-    class late_start
+#    service sdcard /system/bin/sdcard -l -t4 /data/media /mnt/shell/emulated 1023 1023
+#    class late_start
 
 on fs
 # mount ext4 partitions
