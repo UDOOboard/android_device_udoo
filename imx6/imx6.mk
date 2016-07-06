@@ -346,6 +346,7 @@ PRODUCT_COPY_FILES +=	\
 	device/fsl-proprietary/media-profile/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
 	device/fsl-proprietary/media-profile/media_profiles_720p.xml:system/etc/media_profiles_720p.xml \
 	device/fsl-proprietary/media-profile/media_profiles_1080p.xml:system/etc/media_profiles_1080p.xml \
+	device/udoo/common/ui/bootanimation.zip:system/media/bootanimation.zip \
 
 
 # we have enough storage space to hold precise GC data
