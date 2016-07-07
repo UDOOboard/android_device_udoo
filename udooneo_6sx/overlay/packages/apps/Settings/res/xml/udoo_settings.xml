@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:key="udoo_settings_general"
+    android:title="@string/udoo_settings_title">
+
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/displayValues"
+        android:entryValues="@array/displayTypeArray"
+        android:key="@string/display_type_key"
+        android:title="@string/udoo_display_settings_title" />
+
+    <ListPreference
+        android:key="@string/governor_type_key"
+        android:title="@string/udoo_governor_settings_title" />
+
+    <ListPreference
+        android:key="audio_device"
+        android:title="@string/audio_device_title"
+        android:summary="@string/audio_device_title_summary"
+        android:persistent="false"
+        android:entries="@array/audio_device_entries"
+        android:entryValues="@array/audio_device_values" />
+</PreferenceScreen>
