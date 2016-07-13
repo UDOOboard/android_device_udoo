@@ -105,3 +105,8 @@ PRODUCT_COPY_FILES += \
 	device/udoo/common/SuperSU/arm/libsupol.so:system/lib/libsupol.so
 
 -include device/google/gapps/gapps_config.mk
+
+# TWRP
+TW_THEME := landscape_hdpi
+RECOVERY_GRAPHICS_FORCE_SINGLE_BUFFER := true
+TW_NO_SCREEN_TIMEOUT := true

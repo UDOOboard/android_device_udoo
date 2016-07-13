@@ -12,13 +12,5 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-# BUILD_ID is usually used to specify the branch name
-# (like "MAIN") or a branch name and a release candidate
-# (like "CRB01").  It must be a single word, and is
-# capitalized by convention.
-
-export BUILD_ID=6.0.1-beta2
-export BUILD_NUMBER=20160622
 
 PRODUCT_COPY_FILES += device/udoo/imx6/twrp.fstab:recovery/root/etc/twrp.fstab

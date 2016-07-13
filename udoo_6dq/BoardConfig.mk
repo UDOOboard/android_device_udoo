@@ -1,5 +1,6 @@
 include device/udoo/imx6/soc/imx6dq.mk
 include device/udoo/udoo_6dq/build_id.mk
+include device/udoo/udoo_6dq/twrp.mk
 include device/udoo/imx6/BoardConfigCommon.mk
 include device/fsl-proprietary/gpu-viv/fsl-gpu.mk
 # udoo_6dq default target for EXT4

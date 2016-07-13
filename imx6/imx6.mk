@@ -346,6 +346,7 @@ PRODUCT_COPY_FILES +=	\
 	device/fsl-proprietary/media-profile/media_profiles_720p.xml:system/etc/media_profiles_720p.xml \
 	device/fsl-proprietary/media-profile/media_profiles_1080p.xml:system/etc/media_profiles_1080p.xml \
 	device/udoo/common/ui/bootanimation.zip:system/media/bootanimation.zip \
+	device/udoo/imx6/toolbox:recovery/root/sbin/toolbox \
 
 
 # we have enough storage space to hold precise GC data
