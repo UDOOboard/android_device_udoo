@@ -20,5 +20,3 @@
 
 export BUILD_ID=6.0.1-beta3
 export BUILD_NUMBER=20160707
-
-PRODUCT_COPY_FILES += device/udoo/imx6/twrp.fstab:recovery/root/etc/twrp.fstab
