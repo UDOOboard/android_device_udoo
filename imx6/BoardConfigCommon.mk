@@ -106,8 +106,11 @@ PRODUCT_COPY_FILES += \
 
 -include device/google/gapps/gapps_config.mk
 
+WITH_BUSYBOX_LINKS := true
+
 # TWRP
 TW_THEME := landscape_hdpi
 RECOVERY_GRAPHICS_FORCE_SINGLE_BUFFER := true
 TW_NO_SCREEN_TIMEOUT := true
 TW_NO_REBOOT_BOOTLOADER := true
+BOARD_HAS_NO_REAL_SDCARD := true
