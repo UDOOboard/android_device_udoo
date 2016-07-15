@@ -68,6 +68,7 @@ ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
 BOARD_KERNEL_CMDLINE +=  mtdparts=gpmi-nand:16m(bootloader),16m(bootimg),128m(recovery),-(root) gpmi_debug_init ubi.mtd=3
 endif
 
+WITH_DEXPREOPT := true
 
 BOARD_HAVE_BLUETOOTH        	:= true
 BOARD_HAVE_BLUETOOTH_USB        := true
