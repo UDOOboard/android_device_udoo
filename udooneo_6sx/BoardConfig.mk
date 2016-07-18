@@ -82,7 +82,7 @@ $(error "TARGET_USERIMAGES_USE_UBIFS and TARGET_USERIMAGES_USE_EXT4 config open 
 endif
 endif
 
-BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init vmalloc=256M androidboot.console=ttymxc0 consoleblank=0 androidboot.hardware=freescale cma=64M androidboot.selinux=disabled androidboot.dm_verity=disabled no_console_suspend
+BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init vmalloc=256M androidboot.console=ttymxc0 consoleblank=0 androidboot.hardware=freescale cma=128M androidboot.selinux=disabled androidboot.dm_verity=disabled no_console_suspend
 
 ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
 #UBI boot command line.
@@ -94,13 +94,10 @@ endif
 # Low RAM
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.config.low_ram=true \
-	config.disable_atlas=true \
-	dalvik.vm.jit.codecachesize=0 \
 	ro.config.max_starting_bg=8 \
-	ro.sys.fw.bg_apps_limit=16 \
-	ro.config.dha_cached_max=9 \
-	ro.config.dha_lmk_scale=1.5 \
-	ro.config.sdha_apps_bg_max=50
+	ro.sys.fw.bg_apps_limit=16
+
+WITH_DEXPREOPT := true
 
 BOARD_HAVE_BLUETOOTH_BCM := false
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/udoo/udooneo_6sx/bluetooth
