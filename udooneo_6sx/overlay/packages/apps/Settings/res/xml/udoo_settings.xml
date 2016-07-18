@@ -23,4 +23,8 @@
         android:persistent="false"
         android:entries="@array/audio_device_entries"
         android:entryValues="@array/audio_device_values" />
+
+    <Preference
+        android:key="@string/reboot_recovery"
+        android:title="@string/reboot_recovery_title" />
 </PreferenceScreen>
