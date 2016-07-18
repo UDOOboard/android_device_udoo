@@ -21,6 +21,8 @@
      for different hardware and product builds. -->
 <resources>
 
+    <!--For Android we support eth0 now -->
+    <string translatable="false" name="config_ethernet_iface_regex">eth0</string>
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          USB interfaces.  If the device doesn't want to support tething over USB this should
          be empty.  An example would be "usb.*" -->
@@ -235,7 +237,7 @@
          * The remote submix module "audio.r_submix.default" must be installed on the device.
          * The device must be provisioned with HDCP keys (for protected content).
     -->
-    <bool name="config_enableWifiDisplay">true</bool>
+    <bool name="config_enableWifiDisplay">false</bool>
 
     <!-- Disables fading edges when marquee is enabled in TextView.
          The fading edge effect will bring performance drop when

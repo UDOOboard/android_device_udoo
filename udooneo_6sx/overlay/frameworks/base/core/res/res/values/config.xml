@@ -179,6 +179,35 @@
 
     <!-- This device is not "voice capable"; it's data-only. -->
     <bool name="config_voice_capable">false</bool>
+    
+    <!-- Flag indicating whether the current device allows sms service.
+     If true, this means that the device supports both sending and
+     receiving sms via the telephony network.
+     This can be overridden to false for "data only" devices
+     which can't send and receive sms message.
+
+     Note: Disable SMS also disable voicemail waiting sms,
+           cell broadcasting sms, and MMS. -->
+    <bool name="config_sms_capable">false</bool>
+    
+    <!-- default telephony hardware configuration for this platform.
+    -->
+    <!-- this string array should be overridden by the device to present a list
+         telephony hardware resource.  this is used by the telephony device controller
+         (TDC) to offer the basic capabilities of the hardware to the telephony
+         framework
+    -->
+    <!-- an array of "[hardware type],[hardware-uuid],[state],[[hardware-type specific]]"
+         with, [[hardware-type specific]] in:
+            - "[[ril-model],[rat],[max-active-voice],[max-active-data],[max-active-standby]]"
+              for 'modem' hardware
+            - "[[associated-modem-uuid]]"
+              for 'sim' hardware.
+         refer to HardwareConfig in com.android.internal.telephony for specific details/values
+         those elements can carry.
+    -->
+    <string-array translatable="false" name="config_telephonyHardware">
+    </string-array>
 
     <!-- Max space (in MB) allocated to DownloadManager to store the downloaded files
          if they are to be stored in DownloadManager's data dir,

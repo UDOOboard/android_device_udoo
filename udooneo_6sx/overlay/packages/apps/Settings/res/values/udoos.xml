@@ -10,6 +10,7 @@
 	<item>HDMI</item>
     </string-array>
 
+    <!-- Default audio device choices -->
     <string-array name="audio_device_entries">
         <item>HDMI</item>
     </string-array>

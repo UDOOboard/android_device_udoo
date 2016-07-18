@@ -20,7 +20,7 @@ on init
     export CORE_REGISTER_FILE /system/etc/core_register
     export COMPONENT_REGISTER_FILE /system/etc/component_register
     export CONTENTPIPE_REGISTER_FILE /system/etc/contentpipe_register
-    
+
 
     # disable cursor blink for fbcon, if no splash screen support
     write /sys/class/graphics/fbcon/cursor_blink 0
@@ -271,7 +271,7 @@ service rtl_hostapd /system/bin/hostapd /data/misc/wifi/hostapd.conf
 service ril-daemon /system/bin/rild
     class main
     socket rild stream 660 root radio
-   socket rild-debug stream 660 radio system
+    socket rild-debug stream 660 radio system
     socket rild-ppp stream 660 radio system
     user root
     group radio cache inet misc audio sdcard_rw log
