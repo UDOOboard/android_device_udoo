@@ -21,7 +21,6 @@ on init
     export COMPONENT_REGISTER_FILE /system/etc/component_register
     export CONTENTPIPE_REGISTER_FILE /system/etc/contentpipe_register
 
-
     # disable cursor blink for fbcon, if no splash screen support
     write /sys/class/graphics/fbcon/cursor_blink 0
 

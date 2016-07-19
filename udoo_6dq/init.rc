@@ -21,7 +21,6 @@ on init
     export COMPONENT_REGISTER_FILE /system/etc/component_register
     export CONTENTPIPE_REGISTER_FILE /system/etc/contentpipe_register
 
-
     # disable cursor blink for fbcon, if no splash screen support
     write /sys/class/graphics/fbcon/cursor_blink 0
 
@@ -138,11 +137,10 @@ on boot
     # Set WiFi Display Source VideoBitRate Adaptive
     setprop media.wfd.video-bitrate 3000000
 
-# Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
+    # Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
     service watchdogd /sbin/watchdogd 10 20
     class core
     seclabel u:r:watchdogd:s0
-
 
 on charger
     # Enable Power modes and set the CPU Freq Sampling rates

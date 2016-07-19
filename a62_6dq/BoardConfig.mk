@@ -1,7 +1,3 @@
-#
-# Product-specific compile-time definitions.
-#
-
 include device/udoo/imx6/soc/imx6dq.mk
 include device/udoo/a62_6dq/build_id.mk
 include device/udoo/imx6/BoardConfigCommon.mk
