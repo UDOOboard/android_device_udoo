@@ -19,7 +19,7 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME "UDOONeo-iMX6"
+#define BTM_DEF_LOCAL_NAME "UDOO Neo"
 
 // Networking, Capturing, Object Transfer
 // MAJOR CLASS: COMPUTER

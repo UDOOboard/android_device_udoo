@@ -3,7 +3,6 @@ include device/udoo/udooneo_6sx/build_id.mk
 include device/udoo/udooneo_6sx/twrp.mk
 include device/udoo/imx6/BoardConfigCommon.mk
 include device/fsl-proprietary/gpu-viv/fsl-gpu.mk
-# udooneo_6sx default target for EXT4
 BUILD_TARGET_FS ?= ext4
 include device/udoo/imx6/imx6_target_fs.mk
 
@@ -50,45 +49,11 @@ PRODUCT_COPY_FILES +=   \
 			hardware/ti/wlan/WILINK8/firmware/ti-connectivity/wl18xx-conf.bin:system/etc/firmware/ti-connectivity/wl18xx-conf.bin \
 			hardware/ti/wlan/WILINK8/firmware/TIInit_11.8.32.bts:system/etc/firmware/TIInit_11.8.32.bts
 
-					
-BOARD_HAVE_BLUETOOTH_TI := true
-
-USE_ATHR_GPS_HARDWARE := false
-USE_QEMU_GPS_HARDWARE := false
-
 #for accelerator sensor, need to define sensor type here
 BOARD_HAS_SENSOR := true
 SENSOR_MMA8451 := true
 
-# for recovery service
-TARGET_SELECT_KEY := 28
-
-# we don't support sparse image.
-TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
-DM_VERITY_RUNTIME_CONFIG := true
-# uncomment below lins if use NAND
-#TARGET_USERIMAGES_USE_UBIFS = true
-
-
-ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
-UBI_ROOT_INI := device/udoo/udooneo_6sx/ubi/ubinize.ini
-TARGET_MKUBIFS_ARGS := -m 4096 -e 516096 -c 4096 -x none
-TARGET_UBIRAW_ARGS := -m 4096 -p 512KiB $(UBI_ROOT_INI)
-endif
-
-ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
-ifeq ($(TARGET_USERIMAGES_USE_EXT4),true)
-$(error "TARGET_USERIMAGES_USE_UBIFS and TARGET_USERIMAGES_USE_EXT4 config open in same time, please only choose one target file system image")
-endif
-endif
-
 BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init vmalloc=256M androidboot.console=ttymxc0 consoleblank=0 androidboot.hardware=freescale cma=128M androidboot.selinux=disabled androidboot.dm_verity=disabled no_console_suspend
-
-ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
-#UBI boot command line.
-# Note: this NAND partition table must align with MFGTool's config.
-BOARD_KERNEL_CMDLINE +=  mtdparts=gpmi-nand:16m(bootloader),16m(bootimg),128m(recovery),-(root) gpmi_debug_init ubi.mtd=3
-endif
 
 # Low RAM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -96,8 +61,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.config.max_starting_bg=8 \
 	ro.sys.fw.bg_apps_limit=16
 
-WITH_DEXPREOPT := true
-
+BOARD_HAVE_BLUETOOTH_TI := true
 BOARD_HAVE_BLUETOOTH_BCM := false
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/udoo/udooneo_6sx/bluetooth
 
@@ -152,26 +116,3 @@ PRODUCT_COPY_FILES +=	\
 BOARD_SEPOLICY_DIRS := \
        device/udoo/imx6/sepolicy \
        device/udoo/udooneo_6sx/sepolicy
-
-BOARD_SEPOLICY_UNION := \
-       domain.te \
-       system_app.te \
-       system_server.te \
-       untrusted_app.te \
-       sensors.te \
-       init_shell.te \
-       bluetooth.te \
-       hci_attach.te \
-       kernel.te \
-       mediaserver.te \
-       file_contexts \
-       genfs_contexts \
-       fs_use  \
-       rild.te \
-       init.te \
-       netd.te \
-       bootanim.te \
-       dnsmasq.te \
-       recovery.te \
-       device.te \
-       zygote.te

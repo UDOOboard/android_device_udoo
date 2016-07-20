@@ -106,6 +106,23 @@ PRODUCT_COPY_FILES += \
 
 -include device/google/gapps/gapps_config.mk
 
+USE_ATHR_GPS_HARDWARE := false
+USE_QEMU_GPS_HARDWARE := false
+
+# for recovery service
+TARGET_SELECT_KEY := 28
+
+# we don't support sparse image.
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
+DM_VERITY_RUNTIME_CONFIG := true
+# uncomment below lins if use NAND
+#TARGET_USERIMAGES_USE_UBIFS = true
+
+WITH_DEXPREOPT := true
+
+#define consumer IR HAL support
+IMX6_CONSUMER_IR_HAL := false
+
 WITH_BUSYBOX_LINKS := true
 
 # TWRP

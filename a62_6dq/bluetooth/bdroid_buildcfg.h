@@ -19,7 +19,7 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME "A62-iMX6"
+#define BTM_DEF_LOCAL_NAME "Seco A62"
 
 // Networking, Capturing, Object Transfer
 // MAJOR CLASS: COMPUTER

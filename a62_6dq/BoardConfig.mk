@@ -2,7 +2,6 @@ include device/udoo/imx6/soc/imx6dq.mk
 include device/udoo/a62_6dq/build_id.mk
 include device/udoo/imx6/BoardConfigCommon.mk
 include device/fsl-proprietary/gpu-viv/fsl-gpu.mk
-# a62_6dq default target for EXT4
 BUILD_TARGET_FS ?= ext4
 include device/udoo/imx6/imx6_target_fs.mk
 
@@ -52,22 +51,9 @@ WPA_SUPPLICANT_VERSION                   := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER              := NL80211
 # BOARD_HOSTAPD_DRIVER                   := NL80211
 
-USE_ATHR_GPS_HARDWARE := false
-USE_QEMU_GPS_HARDWARE := false
-
 #for accelerator sensor, need to define sensor type here
 BOARD_HAS_SENSOR := false
 SENSOR_MMA8451 := false
-
-# for recovery service
-TARGET_SELECT_KEY := 28
-
-# we don't support sparse image.
-TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
-DM_VERITY_RUNTIME_CONFIG := true
-# uncomment below lins if use NAND
-#TARGET_USERIMAGES_USE_UBIFS = true
-
 
 ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
 UBI_ROOT_INI := device/udoo/a62_6dq/ubi/ubinize.ini
@@ -81,15 +67,13 @@ $(error "TARGET_USERIMAGES_USE_UBIFS and TARGET_USERIMAGES_USE_EXT4 config open 
 endif
 endif
 
-BOARD_KERNEL_CMDLINE := console=ttymxc1,115200 init=/init video=mxcfb0:dev=ldb,bpp=32 video=mxcfb1:dev=hdmi,1920x1080M@60,bpp=32 video=mxcfb2:off video=mxcfb3:off vmalloc=256M androidboot.console=ttymxc1 consoleblank=0 androidboot.hardware=freescale cma=384M androidboot.selinux=disabled androidboot.dm_verity=disabled no_console_suspend  
-
 ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
 #UBI boot command line.
 # Note: this NAND partition table must align with MFGTool's config.
 BOARD_KERNEL_CMDLINE +=  mtdparts=gpmi-nand:16m(bootloader),16m(bootimg),128m(recovery),-(root) gpmi_debug_init ubi.mtd=3
 endif
 
-# Bluedroid bluetooth support, uncomment below to apply
+BOARD_KERNEL_CMDLINE := console=ttymxc1,115200 init=/init video=mxcfb0:dev=ldb,bpp=32 video=mxcfb1:dev=hdmi,1920x1080M@60,bpp=32 video=mxcfb2:off video=mxcfb3:off vmalloc=256M androidboot.console=ttymxc1 consoleblank=0 androidboot.hardware=freescale cma=384M androidboot.selinux=disabled androidboot.dm_verity=disabled no_console_suspend  
 
 BOARD_HAVE_BLUETOOTH        	:= true
 BOARD_HAVE_BLUETOOTH_USB        := true
@@ -106,9 +90,6 @@ USE_GPU_ALLOCATOR := true
 
 # camera hal v3
 IMX_CAMERA_HAL_V3 := false
-
-#define consumer IR HAL support
-IMX6_CONSUMER_IR_HAL := false
 
 TARGET_UBOOT_VERSION := uboot-imx
 TARGET_BOOTLOADER_CONFIG := imx6q:mx6qdl_a62_android_defconfig 
@@ -130,4 +111,3 @@ PRODUCT_COPY_FILES +=	\
 BOARD_SEPOLICY_DIRS := \
 	device/udoo/imx6/sepolicy \
 	device/udoo/a62_6dq/sepolicy
-

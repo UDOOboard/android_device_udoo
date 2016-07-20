@@ -3,7 +3,6 @@ include device/udoo/udoo_6dq/build_id.mk
 include device/udoo/udoo_6dq/twrp.mk
 include device/udoo/imx6/BoardConfigCommon.mk
 include device/fsl-proprietary/gpu-viv/fsl-gpu.mk
-# udoo_6dq default target for EXT4
 BUILD_TARGET_FS ?= ext4
 include device/udoo/imx6/imx6_target_fs.mk
 
@@ -31,44 +30,11 @@ BOARD_WPA_SUPPLICANT_DRIVER              := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB_RALINK  := lib_driver_cmd_ralink
 
 
-USE_ATHR_GPS_HARDWARE := false
-USE_QEMU_GPS_HARDWARE := false
-
 #for accelerator sensor, need to define sensor type here
 BOARD_HAS_SENSOR := false
 SENSOR_MMA8451 := false
 
-# for recovery service
-TARGET_SELECT_KEY := 28
-
-# we don't support sparse image.
-TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
-DM_VERITY_RUNTIME_CONFIG := true
-# uncomment below lins if use NAND
-#TARGET_USERIMAGES_USE_UBIFS = true
-
-
-ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
-UBI_ROOT_INI := device/udoo/udoo_6dq/ubi/ubinize.ini
-TARGET_MKUBIFS_ARGS := -m 4096 -e 516096 -c 4096 -x none
-TARGET_UBIRAW_ARGS := -m 4096 -p 512KiB $(UBI_ROOT_INI)
-endif
-
-ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
-ifeq ($(TARGET_USERIMAGES_USE_EXT4),true)
-$(error "TARGET_USERIMAGES_USE_UBIFS and TARGET_USERIMAGES_USE_EXT4 config open in same time, please only choose one target file system image")
-endif
-endif
-
 BOARD_KERNEL_CMDLINE := console=ttymxc1,115200 init=/init vmalloc=256M androidboot.console=ttymxc1 consoleblank=0 androidboot.hardware=freescale cma=256M androidboot.selinux=disabled androidboot.dm_verity=disabled no_console_suspend
-
-ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
-#UBI boot command line.
-# Note: this NAND partition table must align with MFGTool's config.
-BOARD_KERNEL_CMDLINE +=  mtdparts=gpmi-nand:16m(bootloader),16m(bootimg),128m(recovery),-(root) gpmi_debug_init ubi.mtd=3
-endif
-
-WITH_DEXPREOPT := true
 
 BOARD_HAVE_BLUETOOTH        	:= true
 BOARD_HAVE_BLUETOOTH_USB        := true
@@ -85,9 +51,6 @@ USE_GPU_ALLOCATOR := true
 
 # camera hal v3
 IMX_CAMERA_HAL_V3 := true
-
-#define consumer IR HAL support
-IMX6_CONSUMER_IR_HAL := false
 
 TARGET_UBOOT_VERSION := uboot-imx
 TARGET_BOOTLOADER_CONFIG := imx6q:udoo_qd_android_config
@@ -111,4 +74,3 @@ PRODUCT_COPY_FILES +=	\
 BOARD_SEPOLICY_DIRS := \
 	device/udoo/imx6/sepolicy \
 	device/udoo/udoo_6dq/sepolicy
-
