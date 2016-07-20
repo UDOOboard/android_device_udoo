@@ -9,9 +9,6 @@ on boot
     write /sys/devices/virtual/vtconsole/vtcon0/bind 0
     write /sys/devices/virtual/vtconsole/vtcon1/bind 0
 
-service busyboxsym /sbin/busybox --install /sbin
-    oneshot
-
 service getpropsym /sbin/busybox ln -sf /sbin/toolbox /sbin/getprop
     oneshot
 
