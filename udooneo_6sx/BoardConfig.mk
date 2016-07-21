@@ -33,21 +33,21 @@ COMMON_GLOBAL_CFLAGS += -DUSES_TI_MAC80211
 COMMON_GLOBAL_CFLAGS += -DANDROID_P2P_STUB
 
 TARGET_KERNEL_MODULES       := \
-                                drivers/misc/ti-st/st_drv.ko:system/lib/modules/st_drv.ko   \
-                                drivers/misc/ti-st/tty_hci.ko:system/lib/modules/tty_hci.ko \
-                                backports/net/mac80211/mac80211.ko:system/lib/modules/mac80211.ko \
-                                backports/net/wireless/cfg80211.ko:system/lib/modules/cfg80211.ko \
-				backports/drivers/net/wireless/ti/wl12xx/wl12xx.ko:system/lib/modules/wl12xx.ko \
-				backports/drivers/net/wireless/ti/wl18xx/wl18xx.ko:system/lib/modules/wl18xx.ko \
-				backports/drivers/net/wireless/ti/wlcore/wlcore.ko:system/lib/modules/wlcore.ko \
-				backports/drivers/net/wireless/ti/wlcore/wlcore_sdio.ko:system/lib/modules/wlcore_sdio.ko
+	drivers/misc/ti-st/st_drv.ko:system/lib/modules/st_drv.ko   \
+	drivers/misc/ti-st/tty_hci.ko:system/lib/modules/tty_hci.ko \
+	backports/net/mac80211/mac80211.ko:system/lib/modules/mac80211.ko \
+	backports/net/wireless/cfg80211.ko:system/lib/modules/cfg80211.ko \
+	backports/drivers/net/wireless/ti/wl12xx/wl12xx.ko:system/lib/modules/wl12xx.ko \
+	backports/drivers/net/wireless/ti/wl18xx/wl18xx.ko:system/lib/modules/wl18xx.ko \
+	backports/drivers/net/wireless/ti/wlcore/wlcore.ko:system/lib/modules/wlcore.ko \
+	backports/drivers/net/wireless/ti/wlcore/wlcore_sdio.ko:system/lib/modules/wlcore_sdio.ko
 
 endif
 
 PRODUCT_COPY_FILES +=   \
-			hardware/ti/wlan/WILINK8/firmware/ti-connectivity/wl18xx-fw-4.bin:system/etc/firmware/ti-connectivity/wl18xx-fw-4.bin \
-			hardware/ti/wlan/WILINK8/firmware/ti-connectivity/wl18xx-conf.bin:system/etc/firmware/ti-connectivity/wl18xx-conf.bin \
-			hardware/ti/wlan/WILINK8/firmware/TIInit_11.8.32.bts:system/etc/firmware/TIInit_11.8.32.bts
+	hardware/ti/wlan/WILINK8/firmware/ti-connectivity/wl18xx-fw-4.bin:system/etc/firmware/ti-connectivity/wl18xx-fw-4.bin \
+	hardware/ti/wlan/WILINK8/firmware/ti-connectivity/wl18xx-conf.bin:system/etc/firmware/ti-connectivity/wl18xx-conf.bin \
+	hardware/ti/wlan/WILINK8/firmware/TIInit_11.8.32.bts:system/etc/firmware/TIInit_11.8.32.bts
 
 #for accelerator sensor, need to define sensor type here
 BOARD_HAS_SENSOR := true
