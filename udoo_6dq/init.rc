@@ -37,6 +37,14 @@ on boot
     # emmulate battery property
     setprop sys.emulated.battery 1
 
+    # ralink wifi
+    insmod /system/lib/modules/cfg80211.ko
+    insmod /system/lib/modules/mac80211.ko
+    insmod /system/lib/modules/rt2x00lib.ko
+    insmod /system/lib/modules/rt2x00usb.ko
+    insmod /system/lib/modules/rt2800lib.ko
+    insmod /system/lib/modules/rt2800usb.ko
+
     # Set permission for IIM node
     symlink /dev/mxs_viim /dev/mxc_mem
 
