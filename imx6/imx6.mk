@@ -68,13 +68,9 @@ PRODUCT_PACKAGES += \
 	SuperSU \
 	Terminal
 
-# Broadcom firmwares
+# Bluetooth
 PRODUCT_PACKAGES += \
-	Type_ZP.hcd   	\
 	bt_vendor.conf	\
-	bcmdhd.cal		\
-	fw_bcmdhd.bin	\
-	fw_bcmdhd_apsta.bin
 
 # Debug utils
 PRODUCT_PACKAGES += \
@@ -83,8 +79,7 @@ PRODUCT_PACKAGES += \
 	taskset					\
 	iw     					\
 	sqlite3					\
-	libefence				\
-	powerdebug
+	libefence
 
 # Wifi AP mode
 PRODUCT_PACKAGES += \
@@ -95,7 +90,6 @@ PRODUCT_PACKAGES += \
 # keyboard mapping files.
 PRODUCT_PACKAGES += \
 	Dell_Dell_USB_Keyboard.kcm		\
-	mxckpd.kcm				\
 
 #audio related lib
 PRODUCT_PACKAGES += \
@@ -116,7 +110,6 @@ PRODUCT_PACKAGES += \
 	sensors.ARM2				\
 	sensors.SABREAUTO			\
 	overlay.imx6				\
-	lights.imx6				\
 	gralloc.imx6				\
 	copybit.imx6				\
 	hwcomposer.imx6				\
@@ -124,7 +117,6 @@ PRODUCT_PACKAGES += \
 	power.imx6				\
 	audio.r_submix.default			\
 	magd                                    \
-	consumerir.imx6
 
 
 # Freescale VPU firmware files.
@@ -141,9 +133,6 @@ PRODUCT_PACKAGES += \
 	libdrmframework             		\
 	libdrmpassthruplugin        		\
 	libfwdlockengine            		\
-# power tool
-PRODUCT_PACKAGES += \
-	powerdebug
 
 # gpu debug tool
 PRODUCT_PACKAGES += \
