@@ -32,7 +32,7 @@
         launcher:packageName="com.android.deskclock"
         launcher:className="com.android.alarmclock.AnalogAppWidgetProvider"
         launcher:screen="2"
-        launcher:x="5"
+        launcher:x="6"
         launcher:y="1"
         launcher:spanX="2"
         launcher:spanY="2" />

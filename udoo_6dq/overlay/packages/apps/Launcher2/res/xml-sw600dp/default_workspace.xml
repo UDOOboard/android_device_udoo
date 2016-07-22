@@ -33,7 +33,7 @@
         launcher:className="com.android.alarmclock.AnalogAppWidgetProvider"
         launcher:screen="2"
         launcher:x="6"
-        launcher:y="1"
+        launcher:y="0"
         launcher:spanX="2"
         launcher:spanY="2" />
 
