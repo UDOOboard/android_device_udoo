@@ -4,10 +4,6 @@
 $(call inherit-product, device/udoo/imx6/imx6.mk)
 $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 
-ifneq ($(wildcard device/udoo/udooneo_6sx/fstab_nand.freescale),)
-$(shell touch device/udoo/udooneo_6sx/fstab_nand.freescale)
-endif
-
 ifneq ($(wildcard device/udoo/udooneo_6sx/fstab.freescale),)
 $(shell touch device/udoo/udooneo_6sx/fstab.freescale)
 endif
@@ -20,6 +16,7 @@ PRODUCT_COPY_FILES += \
 	device/udoo/udooneo_6sx/init.rc:root/init.freescale.rc \
 	device/udoo/udooneo_6sx/audio_policy.conf:system/etc/audio_policy.conf \
 	device/udoo/udooneo_6sx/audio_effects.conf:system/vendor/etc/audio_effects.conf
+
 # setup dm-verity configs.
  PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/mmcblk0p5
  $(call inherit-product, build/target/product/verity.mk)
@@ -27,8 +24,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	libbt-vendor \
 	uim-sysfs
-
-# GPU files
 
 DEVICE_PACKAGE_OVERLAYS := device/udoo/udooneo_6sx/overlay
 

@@ -11,7 +11,6 @@ endif
 # Overrides
 PRODUCT_NAME := udoo_6dq
 PRODUCT_DEVICE := udoo_6dq
-BUILD_TARGET_DEVICE := sd
 
 PRODUCT_COPY_FILES += \
 	device/udoo/imx6/init.i.MX6Q.rc:root/init.freescale.i.MX6Q.rc \
@@ -25,22 +24,15 @@ PRODUCT_COPY_FILES +=	\
 	external/linux-firmware-imx/firmware/vpu/vpu_fw_imx6q.bin:system/lib/firmware/vpu/vpu_fw_imx6q.bin
 
 # setup dm-verity configs.
-ifneq ($(BUILD_TARGET_DEVICE),sd)
  PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/mmcblk0p5
  $(call inherit-product, build/target/product/verity.mk)
-else 
- PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/mmcblk1p5
- $(call inherit-product, build/target/product/verity.mk)
-
-endif
 
 PRODUCT_PACKAGES += \
+	AudioRoute \
 	Camera			\
 	LegacyCamera	\
 	libusb			\
 	libbt-vendor
-
-# GPU files
 
 DEVICE_PACKAGE_OVERLAYS := device/udoo/udoo_6dq/overlay
 
@@ -63,7 +55,3 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
 	frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
 	device/udoo/udoo_6dq/required_hardware.xml:system/etc/permissions/required_hardware.xml
-
-PRODUCT_PACKAGES += \
-	AudioRoute \
-	setotg

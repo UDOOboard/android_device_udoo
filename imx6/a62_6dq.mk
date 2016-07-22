@@ -4,10 +4,6 @@
 $(call inherit-product, device/udoo/imx6/imx6.mk)
 $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 
-ifneq ($(wildcard device/udoo/a62_6dq/fstab_nand.freescale),)
-$(shell touch device/udoo/a62_6dq/fstab_nand.freescale)
-endif
-
 ifneq ($(wildcard device/udoo/a62_6dq/fstab.freescale),)
 $(shell touch device/udoo/a62_6dq/fstab.freescale)
 endif
@@ -19,8 +15,8 @@ BUILD_TARGET_DEVICE := sd
 # BUILD_TARGET_DEVICE := emmc
 
 PRODUCT_COPY_FILES += \
-        device/udoo/imx6/init.i.MX6Q.rc:root/init.freescale.i.MX6Q.rc \
-        device/udoo/imx6/init.i.MX6DL.rc:root/init.freescale.i.MX6DL.rc \
+	device/udoo/imx6/init.i.MX6Q.rc:root/init.freescale.i.MX6Q.rc \
+	device/udoo/imx6/init.i.MX6DL.rc:root/init.freescale.i.MX6DL.rc \
 	device/udoo/a62_6dq/init.rc:root/init.freescale.rc \
 	device/udoo/a62_6dq/audio_policy.conf:system/etc/audio_policy.conf \
 	device/udoo/a62_6dq/audio_effects.conf:system/vendor/etc/audio_effects.conf
@@ -48,8 +44,6 @@ PRODUCT_PACKAGES += \
 	libusb			\
 	libbt-vendor	\
 	audio.primary.dummy
-
-# GPU files
 
 DEVICE_PACKAGE_OVERLAYS := device/udoo/a62_6dq/overlay
 
