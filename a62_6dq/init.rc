@@ -27,15 +27,23 @@ on init
     # deattch the fbcon as hdmi hotplug conflict with fbcon
     write /sys/class/vtconsole/vtcon1/bind 0
 
+    # USBkey available under /mnt/usbdrive path
+    symlink /mnt/media_rw/udisk /mnt/usbdrive
+
 on boot
 
     exec /system/bin/fakerclocal
-	
+
     # emmulate battery property
     setprop sys.emulated.battery 1
 
-    # limit dex2oat xmx memory usage to 394 Mega t avoid crash
-    setprop dalvik.vm.dex2oat-Xmx 394m
+    # ralink wifi
+    insmod /system/lib/modules/cfg80211.ko
+    insmod /system/lib/modules/mac80211.ko
+    insmod /system/lib/modules/rt2x00lib.ko
+    insmod /system/lib/modules/rt2x00usb.ko
+    insmod /system/lib/modules/rt2800lib.ko
+#     insmod /system/lib/modules/rt2800usb.ko
 
     # Set permission for IIM node
     symlink /dev/mxs_viim /dev/mxc_mem
