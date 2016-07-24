@@ -26,7 +26,9 @@ BOARD_WLAN_DEVICE                        := RALINK
 WPA_SUPPLICANT_VERSION                   := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER              := NL80211
 # BOARD_HOSTAPD_DRIVER                   := NL80211
-# WIFI_DRIVER_STATE_CTRL_PARAM             := false
+WIFI_DRIVER_STATE_CTRL_PARAM             := true
+WIFI_DRIVER_MODULE_PATH			 := "/system/lib/modules/rt2800usb.ko"
+WIFI_DRIVER_MODULE_NAME			 := "rt2800usb"
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB_RALINK  := lib_driver_cmd_ralink
 
 TARGET_KERNEL_MODULES       := \
