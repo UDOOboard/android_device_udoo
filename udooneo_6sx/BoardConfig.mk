@@ -22,8 +22,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/udoo/imx6
 # Connectivity - Wi-Fi wlink8
 BOARD_WLAN_VENDOR            := TI
 BOARD_WLAN_DEVICE            := WILINK8
-USES_TI_MAC80211 := true
-ifeq ($(USES_TI_MAC80211),true)
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 BOARD_HOSTAPD_DRIVER        := NL80211
@@ -37,12 +35,9 @@ TARGET_KERNEL_MODULES       := \
 	drivers/misc/ti-st/tty_hci.ko:system/lib/modules/tty_hci.ko \
 	backports/net/mac80211/mac80211.ko:system/lib/modules/mac80211.ko \
 	backports/net/wireless/cfg80211.ko:system/lib/modules/cfg80211.ko \
-	backports/drivers/net/wireless/ti/wl12xx/wl12xx.ko:system/lib/modules/wl12xx.ko \
 	backports/drivers/net/wireless/ti/wl18xx/wl18xx.ko:system/lib/modules/wl18xx.ko \
 	backports/drivers/net/wireless/ti/wlcore/wlcore.ko:system/lib/modules/wlcore.ko \
 	backports/drivers/net/wireless/ti/wlcore/wlcore_sdio.ko:system/lib/modules/wlcore_sdio.ko
-
-endif
 
 PRODUCT_COPY_FILES +=   \
 	hardware/ti/wlan/WILINK8/firmware/ti-connectivity/wl18xx-fw-4.bin:system/etc/firmware/ti-connectivity/wl18xx-fw-4.bin \
