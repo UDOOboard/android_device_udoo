@@ -1,6 +1,3 @@
-# This is a FSL Android Reference Design platform based on i.MX6SX ARD board
-# It will inherit from FSL core product which in turn inherit from Google generic
-
 $(call inherit-product, device/udoo/imx6/imx6.mk)
 $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 

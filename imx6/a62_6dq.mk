@@ -1,6 +1,3 @@
-# This is a FSL Android Reference Design platform based on i.MX6Q ARD board
-# It will inherit from FSL core product which in turn inherit from Google generic
-
 $(call inherit-product, device/udoo/imx6/imx6.mk)
 $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 
@@ -30,8 +27,8 @@ PRODUCT_COPY_FILES +=	\
  $(call inherit-product, build/target/product/verity.mk)
 
 PRODUCT_PACKAGES += \
-	Camera          \
-	LegacyCamera    \
+	Camera2         \
+	camera.imx6     \
 	libusb          \
 	libbt-vendor    \
 	audio.primary.dummy
