@@ -28,10 +28,10 @@ PRODUCT_COPY_FILES +=	\
  $(call inherit-product, build/target/product/verity.mk)
 
 PRODUCT_PACKAGES += \
-	AudioRoute \
-	Camera			\
-	LegacyCamera	\
-	libusb			\
+	AudioRoute      \
+	Camera          \
+	LegacyCamera    \
+	libusb          \
 	libbt-vendor
 
 DEVICE_PACKAGE_OVERLAYS := device/udoo/udoo_6dq/overlay

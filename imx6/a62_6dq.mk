@@ -25,18 +25,15 @@ PRODUCT_COPY_FILES +=	\
 	external/linux-firmware-imx/firmware/vpu/vpu_fw_imx6d.bin:system/lib/firmware/vpu/vpu_fw_imx6d.bin 	\
 	external/linux-firmware-imx/firmware/vpu/vpu_fw_imx6q.bin:system/lib/firmware/vpu/vpu_fw_imx6q.bin
 
-PRODUCT_COPY_FILES +=	\
-	device/udoo/common/wifi/firmware/rt5370/rt2870.bin:system/etc/firmware/rt2870.bin
-
 # setup dm-verity configs.
  PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/mmcblk0p5
  $(call inherit-product, build/target/product/verity.mk)
 
 PRODUCT_PACKAGES += \
-	Camera			\
-	LegacyCamera	\
-	libusb			\
-	libbt-vendor	\
+	Camera          \
+	LegacyCamera    \
+	libusb          \
+	libbt-vendor    \
 	audio.primary.dummy
 
 DEVICE_PACKAGE_OVERLAYS := device/udoo/a62_6dq/overlay
