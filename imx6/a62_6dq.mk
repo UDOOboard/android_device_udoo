@@ -29,14 +29,8 @@ PRODUCT_COPY_FILES +=	\
 	device/udoo/common/wifi/firmware/rt5370/rt2870.bin:system/etc/firmware/rt2870.bin
 
 # setup dm-verity configs.
-ifneq ($(BUILD_TARGET_DEVICE),sd)
  PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/mmcblk0p5
  $(call inherit-product, build/target/product/verity.mk)
-else 
- PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/mmcblk1p5
- $(call inherit-product, build/target/product/verity.mk)
-
-endif
 
 PRODUCT_PACKAGES += \
 	Camera			\
