@@ -1,24 +1,22 @@
 #!/system/bin/sh
 
+echo 128 > /sys/class/gpio/export
+echo 203 > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio128/direction
+echo out > /sys/class/gpio/gpio203/direction
+
 case $1 in
 	disable)
 		# use CN3 as USB OTG
-		echo 128 > /sys/class/gpio/export
-		echo 203 > /sys/class/gpio/export
-		echo out > /sys/class/gpio/gpio128/direction
-		echo out > /sys/class/gpio/gpio203/direction
 		echo 0 > /sys/class/gpio/gpio128/value
 		echo 0 > /sys/class/gpio/gpio203/value
-		exit 0
 		;;
 	enable)
 		# disable CN3 for ADK
-		echo 128 > /sys/class/gpio/export
-		echo 203 > /sys/class/gpio/export
-		echo out > /sys/class/gpio/gpio128/direction
-		echo out > /sys/class/gpio/gpio203/direction
+		usleep 500000
 		echo 1 > /sys/class/gpio/gpio128/value
 		echo 1 > /sys/class/gpio/gpio203/value
-		exit 0
 		;;
 esac
+
+exit 0
