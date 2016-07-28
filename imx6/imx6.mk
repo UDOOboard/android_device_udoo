@@ -301,7 +301,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # for property
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
+	persist.sys.usb.config=mtp,adb
 
 #this must be set before including tablet-7in-hdpi-1024-dalvik-heap.mk
 PRODUCT_PROPERTY_OVERRIDES += \
