@@ -62,7 +62,7 @@ USE_ION_ALLOCATOR := false
 USE_GPU_ALLOCATOR := true
 
 # camera hal v3
-IMX_CAMERA_HAL_V3 := false
+IMX_CAMERA_HAL_V3 := true
 
 TARGET_UBOOT_VERSION := uboot-imx
 TARGET_BOOTLOADER_CONFIG := imx6q:mx6qdl_a62_android_defconfig
