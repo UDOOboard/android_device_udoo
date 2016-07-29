@@ -9,7 +9,7 @@
     <string-array name="displayValues">
         <item>LVDS 7</item>
         <item>LVDS 15</item>
-	<item>HDMI</item>
+	<item>HDMI (full HD)</item>
     </string-array>
 
     <!-- Default audio device choices -->
