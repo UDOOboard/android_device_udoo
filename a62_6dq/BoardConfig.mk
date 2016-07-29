@@ -73,9 +73,11 @@ TARGET_KERNEL_MODULES += \
 	arch/arm/boot/dts/imx6dl-seco_A62-hdmi.dtb:system/dts/imx6dl-a62-hdmi.dtb \
 	arch/arm/boot/dts/imx6dl-seco_A62-lvds7.dtb:system/dts/imx6dl-a62-lvds7.dtb \
 	arch/arm/boot/dts/imx6dl-seco_A62-lvds15.dtb:system/dts/imx6dl-a62-lvds15.dtb \
+	arch/arm/boot/dts/imx6dl-seco_A62-lvds7hdmi.dtb:system/dts/imx6dl-a62-lvds7hdmi.dtb \
 	arch/arm/boot/dts/imx6q-seco_A62-hdmi.dtb:system/dts/imx6q-a62-hdmi.dtb \
 	arch/arm/boot/dts/imx6q-seco_A62-lvds7.dtb:system/dts/imx6q-a62-lvds7.dtb \
 	arch/arm/boot/dts/imx6q-seco_A62-lvds15.dtb:system/dts/imx6q-a62-lvds15.dtb \
+	arch/arm/boot/dts/imx6q-seco_A62-lvds7hdmi.dtb:system/dts/imx6q-a62-lvds7hdmi.dtb \
 
 PRODUCT_COPY_FILES +=	\
 	device/udoo/a62_6dq/uEnv.txt:system/uEnv.txt
