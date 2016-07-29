@@ -73,9 +73,11 @@ TARGET_KERNEL_MODULES += \
 	arch/arm/boot/dts/imx6dl-udoo-hdmi.dtb:system/dts/imx6dl-udoo-hdmi.dtb \
 	arch/arm/boot/dts/imx6dl-udoo-lvds7.dtb:system/dts/imx6dl-udoo-lvds7.dtb \
 	arch/arm/boot/dts/imx6dl-udoo-lvds15.dtb:system/dts/imx6dl-udoo-lvds15.dtb \
+	arch/arm/boot/dts/imx6dl-udoo-lvds7hdmi.dtb:system/dts/imx6dl-udoo-lvds7hdmi.dtb \
 	arch/arm/boot/dts/imx6q-udoo-hdmi.dtb:system/dts/imx6q-udoo-hdmi.dtb \
 	arch/arm/boot/dts/imx6q-udoo-lvds7.dtb:system/dts/imx6q-udoo-lvds7.dtb \
 	arch/arm/boot/dts/imx6q-udoo-lvds15.dtb:system/dts/imx6q-udoo-lvds15.dtb \
+	arch/arm/boot/dts/imx6q-udoo-lvds7hdmi.dtb:system/dts/imx6q-udoo-lvds7hdmi.dtb \
 
 PRODUCT_COPY_FILES +=	\
 	device/udoo/udoo_6dq/uEnv.txt:system/uEnv.txt \
