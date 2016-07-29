@@ -13,4 +13,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_COPY_FILES += device/udoo/imx6/twrp.fstab:recovery/root/etc/twrp.fstab
+PRODUCT_COPY_FILES += device/udoo/imx6/twrp_mmcblk0.fstab:recovery/root/etc/twrp.fstab
