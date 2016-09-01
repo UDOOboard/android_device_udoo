@@ -254,7 +254,8 @@ PRODUCT_PACKAGES += \
 	ntfs-3g            \
 	ntfsfix            \
 
-PRODUCT_AAPT_CONFIG := normal mdpi
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 # ril related libs
 PRODUCT_PACKAGES += \
