@@ -49,6 +49,7 @@ BOARD_HAS_SENSOR := true
 SENSOR_MMA8451 := true
 
 BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init vmalloc=256M androidboot.console=ttymxc0 consoleblank=0 androidboot.hardware=freescale cma=128M androidboot.selinux=disabled androidboot.dm_verity=disabled no_console_suspend
+BOARD_KERNEL_CMDLINE += uart_from_osc clk_ignore_unused
 
 # Low RAM
 PRODUCT_PROPERTY_OVERRIDES += \
