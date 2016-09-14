@@ -309,6 +309,12 @@ service m4uploader /system/bin/mqx_upload_on_m4SoloX /data/m4last.fw
     group root
     oneshot
 
+service m4uploader /system/bin/udooneo-m4uploader /data/m4last.fw
+    class main
+    user root
+    group root
+    oneshot
+
 # virtual sdcard daemon running as media_rw (1023)
 # default 4 threads have better performance to 2 threads.
 #    service sdcard /system/bin/sdcard -l -t4 /data/media /mnt/shell/emulated 1023 1023
