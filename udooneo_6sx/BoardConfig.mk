@@ -19,6 +19,11 @@ PRODUCT_MODEL := UDOONEO-MX6SX
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/udoo/imx6
 
+PRODUCT_PACKAGES += \
+	sensors.UDOONEO \
+	magd
+
+
 # Connectivity - Wi-Fi wlink8
 BOARD_WLAN_VENDOR            := TI
 BOARD_WLAN_DEVICE            := WILINK8

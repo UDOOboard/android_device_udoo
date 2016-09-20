@@ -87,16 +87,12 @@ PRODUCT_PACKAGES += \
 
 # iMX6 Hardware HAL libs
 PRODUCT_PACKAGES += \
-	sensors.SABRESD        \
-	sensors.ARM2           \
-	sensors.SABREAUTO      \
 	overlay.imx6           \
 	gralloc.imx6           \
 	copybit.imx6           \
 	hwcomposer.imx6        \
 	power.imx6             \
 	audio.r_submix.default \
-	magd                   \
 
 # Freescale VPU firmware files.
 PRODUCT_PACKAGES += \
