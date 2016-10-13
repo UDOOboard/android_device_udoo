@@ -15,6 +15,7 @@ PRODUCT_COPY_FILES += \
 	device/udoo/imx6/init.i.MX6Q.rc:root/init.freescale.i.MX6Q.rc \
 	device/udoo/imx6/init.i.MX6DL.rc:root/init.freescale.i.MX6DL.rc \
 	device/udoo/a62_6dq/init.rc:root/init.freescale.rc \
+	device/udoo/a62_6dq/init.bluetooth.rc:root/init.bluetooth.rc \
 	device/udoo/a62_6dq/audio_policy.conf:system/etc/audio_policy.conf \
 	device/udoo/a62_6dq/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
@@ -29,6 +30,7 @@ PRODUCT_COPY_FILES +=	\
 PRODUCT_PACKAGES += \
 	Camera2         \
 	camera.imx6     \
+	libglib         \
 	libusb          \
 	libbt-vendor    \
 	audio.primary.dummy

@@ -1,5 +1,6 @@
 import init.${ro.hardware}.usb.rc
 import init.${ro.hardware}.${ro.soc}.rc
+import init.bluetooth.rc
 
 on early-init
     # mount the debugfs
