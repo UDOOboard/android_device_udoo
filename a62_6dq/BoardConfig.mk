@@ -48,6 +48,7 @@ SENSOR_MMA8451 := false
 
 BOARD_KERNEL_CMDLINE := console=ttymxc1,115200 init=/init vmalloc=256M androidboot.console=ttymxc1 consoleblank=0 androidboot.hardware=freescale cma=384M androidboot.selinux=disabled androidboot.dm_verity=disabled no_console_suspend  
 
+TARGET_BUILD_BLUEZ              := true
 BOARD_HAVE_BLUETOOTH        	:= true
 BOARD_HAVE_BLUETOOTH_USB        := true
 BOARD_HAVE_BLUETOOTH_BCM        := false
