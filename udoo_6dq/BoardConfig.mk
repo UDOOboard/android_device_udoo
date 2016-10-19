@@ -3,8 +3,10 @@ include device/udoo/udoo_6dq/build_id.mk
 include device/udoo/udoo_6dq/twrp.mk
 include device/udoo/imx6/BoardConfigCommon.mk
 include device/fsl-proprietary/gpu-viv/fsl-gpu.mk
-BUILD_TARGET_FS ?= ext4
-include device/udoo/imx6/imx6_target_fs.mk
+
+# Set target file system type
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_UBIFS := false
 
 ADDITIONAL_BUILD_PROPERTIES += \
 	ro.boot.storage_type=sd
