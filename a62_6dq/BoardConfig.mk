@@ -58,7 +58,6 @@ BLUETOOTH_HCI_USE_USB 		:= true
 
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL     := true
 BLUETOOTH_HCI_USE_MCT                   := false
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/udoo/a62_6dq/bluetooth
 
 
 USE_ION_ALLOCATOR := false
