@@ -12,8 +12,8 @@ ADDITIONAL_BUILD_PROPERTIES += \
 	ro.boot.storage_type=sd
 TARGET_RECOVERY_FSTAB = device/udoo/udoo_6dq/fstab.freescale
 PRODUCT_COPY_FILES +=	\
-	device/udoo/udoo_6dq/fstab_sd.freescale:root/fstab.freescale     \
-	device/udoo/udoo_6dq/fstab_sd.freescale:root/fstab.freescale.sd  \
+	device/udoo/udoo_6dq/fstab.freescale:root/fstab.freescale     \
+	device/udoo/udoo_6dq/fstab.freescale:root/fstab.freescale.sd  \
 	device/udoo/udoo_6dq/fstab_sata.freescale:root/fstab.freescale.sata
 
 ADDITIONAL_BUILD_PROPERTIES += \
