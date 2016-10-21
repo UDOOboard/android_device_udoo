@@ -55,6 +55,7 @@ PRODUCT_PACKAGES += \
 	AdbWireless            \
 	SuperSU                \
 	Terminal               \
+	UdooReboot             \
 
 # Utilities
 PRODUCT_PACKAGES += \
