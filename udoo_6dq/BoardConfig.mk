@@ -17,7 +17,9 @@ PRODUCT_COPY_FILES +=	\
 	device/udoo/udoo_6dq/fstab_sata.freescale:root/fstab.freescale.sata
 
 ADDITIONAL_BUILD_PROPERTIES += \
-	persist.udoo_enable_adk=false
+	persist.udoo_enable_adk=false \
+	persist.sys.bluetooth.model=UDOO \
+	persist.sys.bluetooth.name=UDOO
 
 TARGET_BOOTLOADER_BOARD_NAME := UDOO
 PRODUCT_MODEL := UDOO-MX6DQ

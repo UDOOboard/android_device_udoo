@@ -18,7 +18,9 @@ PRODUCT_COPY_FILES +=	\
 	device/udoo/a62_6dq/fstab_sata.freescale:root/fstab.freescale.sata
 
 ADDITIONAL_BUILD_PROPERTIES += \
-	persist.audio.device=alc655-audio
+	persist.audio.device=alc655-audio \
+	persist.sys.bluetooth.model=A62 \
+	persist.sys.bluetooth.name=A62
 
 TARGET_BOOTLOADER_BOARD_NAME := A62
 PRODUCT_MODEL := A62-MX6DQ
