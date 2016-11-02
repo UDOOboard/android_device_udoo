@@ -20,6 +20,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
 	mqx_upload_on_m4SoloX \
+	udoofota \
 	libbt-vendor \
 	uim-sysfs
 
