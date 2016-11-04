@@ -1,7 +1,4 @@
 /dev/pmem_gpu             0660   system     graphics
-/dev/ttymxc4              0660   bluetooth  net_bt_stack
-# for Bluetooth (TI)
-/dev/ttymxc2              0660   bluetooth  net_bt_stack
 /dev/hci_tty              0666   bluetooth  bluetooth
 /dev/snd/*                0660   system     audio
 /dev/ttyUSB*              0640   radio      radio
@@ -18,7 +15,6 @@
 /dev/galcore	          0666 	 system     graphics
 /dev/graphics/fb0         0660   system     graphics
 /dev/watchdog             0660   system     root
-/dev/ir                   0660   system     system
 /dev/mma8x5x              0640   compass     system
 /dev/caam_kb              0660   system     system
 

@@ -90,12 +90,7 @@ on boot
     setprop wifi.interface wlan0
     setprop wifi.ap.interface wlan0
 
-    # Prepare for bluetooth
-    #chmod 665 /sys/class/rfkill/rfkill0/state
-    #chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
-    #write /sys/class/rfkill/rfkill0/state 0
-
-    # change permissions for Bluetooth/FM/GPS (TI)
+    # change permissions for Bluetooth (TI)
     chmod 0660 /dev/ttymxc2
     chown bluetooth net_bt_stack /dev/ttymxc2
 
