@@ -19,7 +19,7 @@ PRODUCT_COPY_FILES += \
  $(call inherit-product, build/target/product/verity.mk)
 
 PRODUCT_PACKAGES += \
-	mqx_upload_on_m4SoloX \
+	udooneo-m4uploader \
 	udoofota \
 	libbt-vendor \
 	uim-sysfs

@@ -301,7 +301,7 @@ service daemonsu /system/xbin/daemonsu --auto-daemon
     group root
     oneshot
 
-service m4uploader /system/bin/mqx_upload_on_m4SoloX /data/m4last.fw
+service m4uploader /system/bin/udooneo-m4uploader /data/m4last.fw
     class main
     user root
     group root
