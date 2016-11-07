@@ -21,6 +21,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	udooneo-m4uploader \
 	udoofota \
+	Minicom \
 	libbt-vendor \
 	uim-sysfs
 
