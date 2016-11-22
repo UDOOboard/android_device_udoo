@@ -10,6 +10,7 @@ PRODUCT_NAME := udoo_6dq
 PRODUCT_DEVICE := udoo_6dq
 
 PRODUCT_COPY_FILES += \
+        device/udoo/common/tools/expand-data.zip:system/expand-data.zip \
 	device/udoo/imx6/init.i.MX6Q.rc:root/init.freescale.i.MX6Q.rc \
 	device/udoo/imx6/init.i.MX6DL.rc:root/init.freescale.i.MX6DL.rc \
 	device/udoo/udoo_6dq/init.rc:root/init.freescale.rc \

@@ -10,6 +10,7 @@ PRODUCT_NAME := udooneo_6sx
 PRODUCT_DEVICE := udooneo_6sx
 
 PRODUCT_COPY_FILES += \
+        device/udoo/common/tools/expand-data.zip:system/expand-data.zip \
 	device/udoo/udooneo_6sx/init.rc:root/init.freescale.rc \
 	device/udoo/udooneo_6sx/audio_policy.conf:system/etc/audio_policy.conf \
 	device/udoo/udooneo_6sx/audio_effects.conf:system/vendor/etc/audio_effects.conf
