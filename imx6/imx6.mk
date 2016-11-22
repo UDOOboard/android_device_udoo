@@ -29,6 +29,7 @@ PRODUCT_PACKAGES += \
 	VisualizationWallpapers               \
 	CubeLiveWallpapers                    \
 	PinyinIME                             \
+	libemoji                              \
 	libjni_pinyinime                      \
 	libRS                                 \
 	chat                                  \
