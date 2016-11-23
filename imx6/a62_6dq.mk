@@ -30,6 +30,7 @@ PRODUCT_COPY_FILES +=	\
 PRODUCT_PACKAGES += \
 	Camera2         \
 	camera.imx6     \
+	camerafocus     \
 	libglib         \
 	libusb          \
 	libbt-vendor    \

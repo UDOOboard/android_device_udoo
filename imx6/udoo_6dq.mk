@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
 	AudioRoute      \
 	Camera2         \
 	camera.imx6     \
+	camerafocus     \
 	libglib         \
 	libusb          \
 	libbt-vendor
