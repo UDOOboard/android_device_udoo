@@ -5,6 +5,8 @@ $(call inherit-product, $(TOPDIR)frameworks/base/data/sounds/AllAudio.mk)
 PRODUCT_BRAND := UDOO
 PRODUCT_MANUFACTURER := Seco
 
+GAPPS_VARIANT := nano
+
 PRODUCT_PACKAGES += \
 	LiveWallpapers                        \
 	LiveWallpapersPicker                  \
@@ -310,3 +312,6 @@ PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 
 # include a google recommend heap config file.
 include frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk
+
+$(call inherit-product, vendor/google/build/opengapps-packages.mk)
+
