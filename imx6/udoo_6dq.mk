@@ -34,6 +34,7 @@ PRODUCT_PACKAGES += \
 	camerafocus     \
 	libglib         \
 	libusb          \
+	bossacjni       \
 	libbt-vendor
 
 DEVICE_PACKAGE_OVERLAYS := device/udoo/udoo_6dq/overlay
