@@ -1,4 +1,4 @@
 #save this file with unix-like newlines! (\n, 0x0A)
 
-video_output=lvds7hdmi
+video_output=lvds1080
 #fdt_file=/path/to/custom/devicetree.dtb
