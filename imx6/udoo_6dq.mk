@@ -2,15 +2,6 @@
 # It will inherit from FSL core product which in turn inherit from Google generic
 
 $(call inherit-product, device/udoo/imx6/imx6.mk)
-$(call inherit-product-if-exists,vendor/google/products/gms.mk)
-
-ifneq ($(wildcard device/udoo/udoo_6dq/fstab_nand.freescale),)
-$(shell touch device/udoo/udoo_6dq/fstab_nand.freescale)
-endif
-
-ifneq ($(wildcard device/udoo/udoo_6dq/fstab.freescale),)
-$(shell touch device/udoo/udoo_6dq/fstab.freescale)
-endif
 
 # Overrides
 PRODUCT_NAME := udoo_6dq
