@@ -102,3 +102,8 @@ TW_NO_REBOOT_BOOTLOADER := true
 BOARD_HAS_NO_REAL_SDCARD := true
 
 -include device/google/gapps/gapps_config.mk
+
+# TWRP
+TW_THEME := landscape_hdpi
+RECOVERY_GRAPHICS_FORCE_SINGLE_BUFFER := true
+TW_NO_SCREEN_TIMEOUT := true
