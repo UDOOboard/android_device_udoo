@@ -107,10 +107,10 @@ fi
 function format_android
 {
     echo "formating android images"
-    mkfs.ext4 ${node}${part}4 -L data
-    mkfs.ext4 ${node}${part}5 -Lsystem
-    mkfs.ext4 ${node}${part}6 -Lcache
-    mkfs.ext4 ${node}${part}7 -Ldevice
+    mkfs.ext4 ${node}${part}4 -F -L data
+    mkfs.ext4 ${node}${part}5 -F -Lsystem
+    mkfs.ext4 ${node}${part}6 -F -Lcache
+    mkfs.ext4 ${node}${part}7 -F -Ldevice
 }
 
 function flash_android
@@ -125,11 +125,11 @@ if [ "${flash_images}" -eq "1" ]; then
     echo "recovery image: ${recoveryimage_file}"
     echo "system image: ${systemimage_file}"
     dd if=/dev/zero of=${node} bs=1k seek=${bootloader_offset} conv=fsync count=800
-    dd if=${bootloader_file} of=${node} bs=1k seek=${bootloader_offset} conv=fsync
-    dd if=${bootimage_file} of=${node}${part}1 conv=fsync
-    dd if=${recoveryimage_file} of=${node}${part}2 conv=fsync
-    simg2img ${systemimage_file} ${systemimage_raw_file}
-    dd if=${systemimage_raw_file} of=${node}${part}5 conv=fsync
+    dd if=${bootloader_file} of=${node} bs=1k seek=${bootloader_offset} conv=fsync bs=2M
+    dd if=${bootimage_file} of=${node}${part}1 conv=fsync bs=2M
+    dd if=${recoveryimage_file} of=${node}${part}2 conv=fsync bs=2M
+    simg2img ${systemimage_file} ${systemimage_raw_file} bs=2M
+    dd if=${systemimage_raw_file} of=${node}${part}5 conv=fsync bs=2M status=progress
     rm ${systemimage_raw_file}
 fi
 }
