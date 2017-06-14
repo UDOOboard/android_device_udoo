@@ -12,8 +12,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_RECOVERY_FSTAB = device/udoo/udoo_6dq/fstab_sd.freescale
 PRODUCT_COPY_FILES   += device/udoo/udoo_6dq/fstab_sd.freescale:root/fstab.freescale
 
-TARGET_BOOTLOADER_BOARD_NAME := udoo
-PRODUCT_MODEL := udoo-MX6DQ
+TARGET_BOOTLOADER_BOARD_NAME := UDOO
+PRODUCT_MODEL := UDOO-MX6DQ
 
 TARGET_BOOTLOADER_POSTFIX := imx
 
