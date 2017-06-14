@@ -1,36 +1,16 @@
-#
-# Product-specific compile-time definitions.
-#
-
 include device/udoo/imx6/soc/imx6sx.mk
 include device/udoo/udoo_6sx/build_id.mk
 include device/udoo/imx6/BoardConfigCommon.mk
-# udoo_6sx default target for EXT4
 BUILD_TARGET_FS ?= ext4
 include device/udoo/imx6/imx6_target_fs.mk
 
-ifeq ($(BUILD_TARGET_FS),ubifs)
-TARGET_RECOVERY_FSTAB = device/udoo/udoo_6sx/fstab_nand.freescale
-# build ubifs for nand devices
-PRODUCT_COPY_FILES +=	\
-	device/udoo/udoo_6sx/fstab_nand.freescale:root/fstab.freescale
-else
 ADDITIONAL_BUILD_PROPERTIES += \
-                        ro.internel.storage_size=/sys/block/mmcblk3/size \
-                        ro.frp.pst=/dev/block/mmcblk3p12
-ifneq ($(BUILD_TARGET_FS),f2fs)
+                        ro.internel.storage_size=/sys/block/mmcblk0/size \
+                        ro.frp.pst=/dev/block/mmcblk0p12
+
 TARGET_RECOVERY_FSTAB = device/udoo/udoo_6sx/fstab.freescale
-# build for ext4
 PRODUCT_COPY_FILES +=	\
 	device/udoo/udoo_6sx/fstab.freescale:root/fstab.freescale
-else
-TARGET_RECOVERY_FSTAB = device/udoo/udoo_6sx/fstab-f2fs.freescale
-# build for f2fs
-PRODUCT_COPY_FILES +=	\
-	device/udoo/udoo_6sx/fstab-f2fs.freescale:root/fstab.freescale
-endif # BUILD_TARGET_FS
-endif # BUILD_TARGET_FS
-
 
 TARGET_BOOTLOADER_BOARD_NAME := udoo
 PRODUCT_MODEL := udoo-MX6SX
