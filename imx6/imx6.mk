@@ -110,8 +110,7 @@ PRODUCT_PACKAGES += \
 	vpu_fw_imx6d.bin			\
 
 PRODUCT_PACKAGES += \
-    slideshow \
-    verity_warning_images
+    slideshow
 
 # drm related lib
 PRODUCT_PACKAGES += \

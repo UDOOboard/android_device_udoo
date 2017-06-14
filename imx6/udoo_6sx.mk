@@ -30,10 +30,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/av/services/audiopolicy/config/default_volume_tables.xml:system/etc/default_volume_tables.xml \
 	frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:system/etc/audio_policy_volumes.xml \
 
-# setup dm-verity configs.
- PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/mmcblk0p5
- $(call inherit-product, build/target/product/verity.mk)
-
 # GPU files
 
 DEVICE_PACKAGE_OVERLAYS := device/udoo/udoo_6sx/overlay
