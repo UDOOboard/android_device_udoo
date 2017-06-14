@@ -258,8 +258,6 @@ omx_excluded_libs :=					\
 
 PRODUCT_PACKAGES += $(omx_libs) $(omx_excluded_libs)
 
-PRODUCT_PACKAGES += libubi ubinize ubiformat ubiattach ubidetach ubiupdatevol ubimkvol ubinfo mkfs_ubifs 
-
 # FUSE based emulated sdcard daemon
 PRODUCT_PACKAGES += sdcard
 

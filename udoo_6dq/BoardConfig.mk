@@ -1,17 +1,16 @@
 include device/udoo/imx6/soc/imx6dq.mk
 include device/udoo/udoo_6dq/build_id.mk
 include device/udoo/imx6/BoardConfigCommon.mk
-BUILD_TARGET_FS ?= ext4
-include device/udoo/imx6/imx6_target_fs.mk
 
 ADDITIONAL_BUILD_PROPERTIES += \
                         ro.internel.storage_size=/sys/block/mmcblk0/size \
                         ro.boot.storage_type=sd \
                         ro.frp.pst=/dev/block/mmcblk0p12
 
+BUILD_TARGET_FS ?= ext4
+TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_RECOVERY_FSTAB = device/udoo/udoo_6dq/fstab_sd.freescale
-PRODUCT_COPY_FILES +=	\
-	device/udoo/udoo_6dq/fstab_sd.freescale:root/fstab.freescale
+PRODUCT_COPY_FILES   += device/udoo/udoo_6dq/fstab_sd.freescale:root/fstab.freescale
 
 TARGET_BOOTLOADER_BOARD_NAME := udoo
 PRODUCT_MODEL := udoo-MX6DQ
@@ -48,21 +47,6 @@ TARGET_SELECT_KEY := 28
 # we don't support sparse image.
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 DM_VERITY_RUNTIME_CONFIG := true
-# uncomment below lins if use NAND
-#TARGET_USERIMAGES_USE_UBIFS = true
-
-
-ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
-UBI_ROOT_INI := device/udoo/udoo_6dq/ubi/ubinize.ini
-TARGET_MKUBIFS_ARGS := -m 4096 -e 516096 -c 4096 -x none
-TARGET_UBIRAW_ARGS := -m 4096 -p 512KiB $(UBI_ROOT_INI)
-endif
-
-ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
-ifeq ($(TARGET_USERIMAGES_USE_EXT4),true)
-$(error "TARGET_USERIMAGES_USE_UBIFS and TARGET_USERIMAGES_USE_EXT4 config open in same time, please only choose one target file system image")
-endif
-endif
 
 BOARD_KERNEL_CMDLINE := console=ttymxc1,115200 init=/init video=mxcfb0:dev=ldb,bpp=32 video=mxcfb1:off video=mxcfb2:off video=mxcfb3:off vmalloc=128M androidboot.console=ttymxc1 consoleblank=0 androidboot.hardware=freescale cma=448M androidboot.dm_verity=disabled
 
