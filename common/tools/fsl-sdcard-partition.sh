@@ -58,15 +58,10 @@ while [ "$moreoptions" = 1 -a $# -gt 0 ]; do
 	[ "$moreoptions" = 1 ] && shift
 done
 
-if [ "${soc_name}" = "imx8dv" ]; then
-    bootloader_offset=16
-fi
-
 if [ ! -e ${node} ]; then
 	help
 	exit
 fi
-
 
 sfdisk_version=`sfdisk -v | awk '{print $4}' | awk -F '.' '{print $2}'`
 if [ $sfdisk_version -ge "26" ]; then
@@ -83,7 +78,7 @@ seprate=100
 total_size=`sfdisk -s ${node}`
 total_size=`expr ${total_size} / 1024`
 boot_rom_sizeb=`expr ${BOOT_ROM_SIZE} + ${BOOTLOAD_RESERVE}`
-extend_size=`expr ${SYSTEM_ROM_SIZE} + ${CACHE_SIZE} + ${DEVICE_SIZE} + ${MISC_SIZE} + ${FBMISC_SIZE} + ${PRESISTDATA_SIZE} + ${DATAFOOTER_SIZE} + ${METADATA_SIZE} +  ${seprate}`
+extend_size=`expr ${SYSTEM_ROM_SIZE} + ${CACHE_SIZE} + ${DEVICE_SIZE} + ${MISC_SIZE} + ${FBMISC_SIZE} + ${PRESISTDATA_SIZE} + ${DATAFOOTER_SIZE} + ${METADATA_SIZE} + ${seprate}`
 data_size=`expr ${total_size} - ${boot_rom_sizeb} - ${RECOVERY_ROM_SIZE} - ${extend_size}`
 
 # create partitions
@@ -107,7 +102,7 @@ fi
 function format_android
 {
     echo "formating android images"
-    mkfs.ext4 ${node}${part}4 -F -L data
+    mkfs.ext4 ${node}${part}4 -F -Ldata
     mkfs.ext4 ${node}${part}5 -F -Lsystem
     mkfs.ext4 ${node}${part}6 -F -Lcache
     mkfs.ext4 ${node}${part}7 -F -Ldevice
@@ -125,10 +120,10 @@ if [ "${flash_images}" -eq "1" ]; then
     echo "recovery image: ${recoveryimage_file}"
     echo "system image: ${systemimage_file}"
     dd if=/dev/zero of=${node} bs=1k seek=${bootloader_offset} conv=fsync count=800
-    dd if=${bootloader_file} of=${node} bs=1k seek=${bootloader_offset} conv=fsync bs=2M
+    dd if=${bootloader_file} of=${node} bs=2M seek=${bootloader_offset} conv=fsync
     dd if=${bootimage_file} of=${node}${part}1 conv=fsync bs=2M
     dd if=${recoveryimage_file} of=${node}${part}2 conv=fsync bs=2M
-    simg2img ${systemimage_file} ${systemimage_raw_file} bs=2M
+    simg2img ${systemimage_file} ${systemimage_raw_file}
     dd if=${systemimage_raw_file} of=${node}${part}5 conv=fsync bs=2M status=progress
     rm ${systemimage_raw_file}
 fi
@@ -179,7 +174,6 @@ fi
 
 format_android
 flash_android
-
 
 # For MFGTool Notes:
 # MFGTool use mksdcard-android.tar store this script
