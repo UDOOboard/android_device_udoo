@@ -26,8 +26,9 @@ TARGET_BOOTLOADER_POSTFIX := imx
 
 # Kernel
 TARGET_KERNEL_DEFCONF := udoo_quad_dual_android_defconfig
-BOARD_KERNEL_CMDLINE := console=ttymxc1,115200 init=/init vmalloc=128M androidboot.console=ttymxc1 consoleblank=0 androidboot.hardware=freescale cma=448M androidboot.dm_verity=disabled
+BOARD_KERNEL_CMDLINE  := console=ttymxc1,115200 init=/init vmalloc=128M androidboot.console=ttymxc1 consoleblank=0 androidboot.hardware=freescale cma=448M androidboot.dm_verity=disabled
 TARGET_BOARD_DTS_CONFIG := imx6q:imx6q-udoo-hdmi.dtb
+TARGET_BOARD_DTS_FILES  := imx6{q,dl}-udoo{-lvds7,-lvds15,-hdmi}.dtb
 TARGET_BOARD_KERNEL_HEADERS := device/udoo/common/kernel-headers
 TARGET_KERNEL_MODULES := \
 	arch/arm/boot/dts/imx6dl-udoo-hdmi.dtb:system/dts/imx6dl-udoo-hdmi.dtb \
@@ -49,13 +50,13 @@ WIFI_DRIVER_MODULE_PATH                  := "/system/lib/modules/rt2800usb.ko"
 WIFI_DRIVER_MODULE_NAME                  := "rt2800usb"
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB_RALINK  := lib_driver_cmd_ralink
 
-TARGET_KERNEL_MODULES       := \
-	backports/net/mac80211/mac80211.ko:system/lib/modules/mac80211.ko \
-	backports/net/wireless/cfg80211.ko:system/lib/modules/cfg80211.ko \
-	backports/drivers/net/wireless/rt2x00/rt2800lib.ko:system/lib/modules/rt2800lib.ko \
-	backports/drivers/net/wireless/rt2x00/rt2800usb.ko:system/lib/modules/rt2800usb.ko \
-	backports/drivers/net/wireless/rt2x00/rt2x00lib.ko:system/lib/modules/rt2x00lib.ko \
-	backports/drivers/net/wireless/rt2x00/rt2x00usb.ko:system/lib/modules/rt2x00usb.ko
+TARGET_KERNEL_MODULES       += \
+	net/mac80211/mac80211.ko:system/lib/modules/mac80211.ko \
+	net/wireless/cfg80211.ko:system/lib/modules/cfg80211.ko \
+	drivers/net/wireless/rt2x00/rt2800lib.ko:system/lib/modules/rt2800lib.ko \
+	drivers/net/wireless/rt2x00/rt2800usb.ko:system/lib/modules/rt2800usb.ko \
+	drivers/net/wireless/rt2x00/rt2x00lib.ko:system/lib/modules/rt2x00lib.ko \
+	drivers/net/wireless/rt2x00/rt2x00usb.ko:system/lib/modules/rt2x00usb.ko
 
 BOARD_SUPPORT_BCM_WIFI  := false
 
