@@ -8,8 +8,8 @@ ADDITIONAL_BUILD_PROPERTIES += \
 
 BUILD_TARGET_FS ?= ext4
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_RECOVERY_FSTAB = device/udoo/udoo_6sx/fstab.freescale
-PRODUCT_COPY_FILES   += device/udoo/udoo_6sx/fstab.freescale:root/fstab.freescale
+TARGET_RECOVERY_FSTAB = device/udoo/udoo_6sx/fstab_sd.freescale
+PRODUCT_COPY_FILES   += device/udoo/udoo_6sx/fstab_sd.freescale:root/fstab.freescale
 
 PRODUCT_MODEL := UDOONEO-MX6SX
 
