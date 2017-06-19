@@ -63,6 +63,16 @@ if [ ! -e ${node} ]; then
 	exit
 fi
 
+VENDOR_F="${node//\/dev/\/sys\/class\/block}/device/vendor"
+VENDOR=$(cat $VENDOR_F |xargs)
+
+if [ "$VENDOR" != "Lexar" ]; then
+        echo "Vendor is $VENDOR, exiting!"
+        exit 1
+fi
+echo "SD vendor is $VENDOR, good!"
+
+
 sfdisk_version=`sfdisk -v | awk '{print $4}' | awk -F '.' '{print $2}'`
 if [ $sfdisk_version -ge "26" ]; then
     opt_unit=""
