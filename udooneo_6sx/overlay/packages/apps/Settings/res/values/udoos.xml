@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+     <string-array name="displayTypeArray">
+        <item>lvds7</item>
+        <item>hdmi</item>
+    </string-array>
+
+    <string-array name="displayValues">
+        <item>LVDS 7</item>
+	<item>HDMI</item>
+    </string-array>
+
+    <!-- Default audio device choices -->
+    <string-array name="audio_device_entries">
+        <item>HDMI</item>
+    </string-array>
+
+    <string-array name="audio_device_values">
+        <item>imx-tda19988</item>
+    </string-array>
+</resources>

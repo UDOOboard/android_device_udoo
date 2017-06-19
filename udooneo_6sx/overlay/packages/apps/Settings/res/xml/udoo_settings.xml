@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:key="udoo_settings_general"
+    android:title="@string/udoo_settings_title">
+
+    <ListPreference
+        android:defaultValue="hdmi"
+        android:entries="@array/displayValues"
+        android:entryValues="@array/displayTypeArray"
+        android:key="@string/udoo_video_output_key"
+        android:title="@string/udoo_video_output_title" />
+
+    <ListPreference
+        android:key="@string/udoo_governor_key"
+        android:title="@string/udoo_governor_title" />
+
+    <ListPreference
+        android:key="@string/udoo_audio_device_key"
+        android:title="@string/udoo_audio_device_title"
+        android:persistent="false"
+        android:entries="@array/audio_device_entries"
+        android:entryValues="@array/audio_device_values" />
+
+    <Preference
+        android:key="@string/udoo_reboot_recovery_key"
+        android:title="@string/udoo_recovery_title" />
+
+    <Preference
+        android:key="@string/udoo_expand_data_partition_key"
+        android:title="@string/udoo_expand_data_partition_title" />
+</PreferenceScreen>

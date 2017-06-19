@@ -1,5 +1,6 @@
 import init.${ro.hardware}.usb.rc
 import init.${ro.hardware}.${ro.soc}.rc
+import init.bluetooth.rc
 
 on early-init
     # mount the debugfs
@@ -34,7 +35,12 @@ on init
     mkdir /mnt/shm  0775 media drmrpc
     mount tmpfs tmpfs /mnt/shm mode=0775,uid=1013,gid=1031,size=1m
 
+    # USBkey available under /mnt/usbdrive path
+    symlink /mnt/media_rw/udisk /mnt/usbdrive
+
 on boot
+
+    exec /system/bin/fakerclocal
 
     # emmulate battery property
     setprop sys.emulated.battery 1
@@ -95,6 +101,10 @@ on boot
 
     # Set extsd access permission
     setprop persist.sampling_profiler 1
+    
+    chmod 0666 /dev/udoo_ard
+    chmod 0666 /dev/ttymxc3
+    symlink /dev/ttyS0 /dev/ttymxc3
 
 # change for FSL specific service
     chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
