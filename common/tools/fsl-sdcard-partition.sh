@@ -120,7 +120,7 @@ if [ "${flash_images}" -eq "1" ]; then
     echo "recovery image: ${recoveryimage_file}"
     echo "system image: ${systemimage_file}"
     dd if=/dev/zero of=${node} bs=1k seek=${bootloader_offset} conv=fsync count=800
-    dd if=${bootloader_file} of=${node} bs=2M seek=${bootloader_offset} conv=fsync
+    dd if=${bootloader_file} of=${node} bs=1k seek=${bootloader_offset} conv=fsync
     dd if=${bootimage_file} of=${node}${part}1 conv=fsync bs=2M
     dd if=${recoveryimage_file} of=${node}${part}2 conv=fsync bs=2M
     simg2img ${systemimage_file} ${systemimage_raw_file}
