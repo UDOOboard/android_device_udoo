@@ -20,7 +20,7 @@ TARGET_BOOTLOADER_POSTFIX := imx
 
 # Kernel
 TARGET_KERNEL_DEFCONF := udoo_neo_android_defconfig
-BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init androidboot.console=ttymxc0 consoleblank=0 androidboot.hardware=freescale vmalloc=128M cma=448M androidboot.dm_verity=disabled androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init androidboot.console=ttymxc0 consoleblank=0 androidboot.hardware=freescale vmalloc=128M cma=448M androidboot.selinux=permissive
 TARGET_BOARD_DTS_CONFIG := imx6sx:imx6sx-udoo-neo-full-hdmi-m4.dtb
 TARGET_BOARD_DTS_FILES  := imx6sx-udoo-neo-{basic,basicks,extended,full}{-hdmi,-lvds7,-lvds15,}{-m4,}.dtb
 TARGET_BOARD_KERNEL_HEADERS := device/udoo/common/kernel-headers
