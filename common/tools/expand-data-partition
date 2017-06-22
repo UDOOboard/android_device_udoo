@@ -1,0 +1,7 @@
+#!/system/xbin/bash
+
+FIRST=$(echo p | fdisk /dev/block/mmcblk0 |grep p4 |awk '{print $2}')
+(echo d; echo 4; echo n; echo p; echo $FIRST; echo ; echo ; echo w; ) | fdisk /dev/block/mmcblk0
+
+sync
+
