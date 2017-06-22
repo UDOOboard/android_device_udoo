@@ -40,7 +40,7 @@ TARGET_KERNEL_MODULES := \
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/udoo/imx6
 
-
+# Wi-Fi
 BOARD_WLAN_DEVICE                        := RALINK
 WPA_SUPPLICANT_VERSION                   := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER              := NL80211
@@ -58,11 +58,15 @@ TARGET_KERNEL_MODULES       += \
 	drivers/net/wireless/rt2x00/rt2x00lib.ko:system/lib/modules/rt2x00lib.ko \
 	drivers/net/wireless/rt2x00/rt2x00usb.ko:system/lib/modules/rt2x00usb.ko
 
+PRODUCT_COPY_FILES +=   \
+	device/udoo/common/wifi/firmware/rt5370/rt2870.bin:system/etc/firmware/rt2870.bin
+
 BOARD_SUPPORT_BCM_WIFI  := false
 
 # we don't support sparse image.
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 
+# Bluetooth
 TARGET_BUILD_BLUEZ              := true
 BOARD_HAVE_BLUETOOTH        	:= true
 BOARD_HAVE_BLUETOOTH_USB        := true

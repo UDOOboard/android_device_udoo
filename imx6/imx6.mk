@@ -1,5 +1,5 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_no_telephony.mk)
 $(call inherit-product, $(TOPDIR)frameworks/base/data/sounds/AllAudio.mk)
 
 PRODUCT_BRAND := Seco
@@ -15,7 +15,6 @@ PRODUCT_PACKAGES += \
 	SoundRecorder				\
 	Camera					\
         LegacyCamera                            \
-	Email					\
 	FSLOta					\
 	CactusPlayer                            \
 	WfdSink                                 \
@@ -32,7 +31,6 @@ PRODUCT_PACKAGES += \
 	libfsl_hdcp_blob                     \
 	libstagefright_hdcp.so                  \
 	libstagefright_hdcp                  \
-	VideoEditor				\
 	FSLProfileApp				\
 	FSLProfileService			\
 	VisualizationWallpapers			\
@@ -52,6 +50,14 @@ PRODUCT_PACKAGES += \
 	wpa_supplicant_overlay.conf			\
     p2p_supplicant_advance_overlay.conf \
 	libion
+
+# User Applications
+PRODUCT_PACKAGES += \
+	CMFileManager          \
+	AdbWireless            \
+	SuperSU                \
+	Terminal               \
+	UdooReboot             \
 
 #FREESCALE_EXTENDED
 PRODUCT_PACKAGES += freescale-extended 		\
@@ -279,7 +285,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
-PRODUCT_AAPT_CONFIG := normal mdpi
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 # ril related libs
 PRODUCT_PACKAGES += \
@@ -298,25 +305,33 @@ PRODUCT_COPY_FILES +=	\
 	device/udoo/common/input/eGalax_Touch_Screen.idc:system/usr/idc/eGalax_Touch_Screen.idc \
 	device/udoo/common/input/eGalax_Touch_Screen.idc:system/usr/idc/HannStar_P1003_Touchscreen.idc \
 	device/udoo/common/input/eGalax_Touch_Screen.idc:system/usr/idc/Novatek_NT11003_Touch_Screen.idc \
+	device/udoo/common/input/sitronix_Touch_Screen.idc:system/usr/idc/st1232-touchscreen.idc \
+	device/udoo/common/input/Vendor_0596_Product_0001.idc:system/usr/idc/Vendor_0596_Product_0001.idc \
+	device/udoo/common/input/Vendor_04d8_Product_f724.idc:system/usr/idc/Vendor_04d8_Product_f724.idc \
+	device/udoo/common/input/Vendor_0eef_Product_a107.idc:system/usr/idc/Vendor_0eef_Product_a107.idc \
 	system/core/rootdir/init.rc:root/init.rc \
 	device/udoo/imx6/etc/apns-conf.xml:system/etc/apns-conf.xml \
 	device/udoo/imx6/etc/init.usb.rc:root/init.freescale.usb.rc \
 	device/udoo/imx6/etc/ueventd.freescale.rc:root/ueventd.freescale.rc \
 	device/udoo/imx6/etc/ppp/init.gprs-pppd:system/etc/ppp/init.gprs-pppd \
 	device/udoo/imx6/etc/ota.conf:system/etc/ota.conf \
-        device/udoo/imx6/init.recovery.freescale.rc:root/init.recovery.freescale.rc \
-    device/fsl-proprietary/media-profile/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    device/fsl-proprietary/media-profile/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    device/fsl-proprietary/media-profile/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    device/fsl-proprietary/media-profile/media_profiles_720p.xml:system/etc/media_profiles_720p.xml \
-    
+	device/udoo/imx6/init.recovery.freescale.rc:root/init.recovery.freescale.rc \
+	device/fsl-proprietary/media-profile/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+	device/fsl-proprietary/media-profile/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+	device/fsl-proprietary/media-profile/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+	device/fsl-proprietary/media-profile/media_profiles_720p.xml:system/etc/media_profiles_720p.xml \
+	device/fsl-proprietary/media-profile/media_profiles_1080p.xml:system/etc/media_profiles_1080p.xml \
+	device/udoo/common/ui/bootanimation.zip:system/media/bootanimation.zip \
+	device/udoo/common/tools/expand-data-partition:system/bin/expand-data-partition \
+	device/udoo/common/tools/expand-data-fs.zip:system/etc/expand-data-fs.zip
+
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # for property
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
+	persist.sys.usb.config=mtp,adb
 
 # enlarge media max memory size to 3G.
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -324,7 +339,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #this must be set before including tablet-7in-hdpi-1024-dalvik-heap.mk
 PRODUCT_PROPERTY_OVERRIDES += \
-        dalvik.vm.heapgrowthlimit=128m
+	dalvik.vm.heapgrowthlimit=128m \
+	ro.radio.noril=yes \
+	ro.carrier=wifi-only
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
         device/udoo/common/security/testkey
@@ -340,5 +357,5 @@ ifneq (,$(filter userdebug, $(TARGET_BUILD_VARIANT)))
     $(call add-product-dex-preopt-module-config,wifi-service,--generate-mini-debug-info)
 endif
 
-# include a google recommand heap config file.
+# include a google recommend heap config file.
 include frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk

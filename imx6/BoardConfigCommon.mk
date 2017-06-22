@@ -94,6 +94,9 @@ ADDITIONAL_BUILD_PROPERTIES += \
     ro.FSL_MPG2_PARSER=1 \
     ro.FSL_REAL_PARSER=0 \
 
+PRODUCT_COPY_FILES += \
+	device/udoo/common/tools/fakerclocal:system/bin/fakerclocal
+
 # TWRP
 TW_THEME := landscape_hdpi
 RECOVERY_GRAPHICS_FORCE_SINGLE_BUFFER := true
