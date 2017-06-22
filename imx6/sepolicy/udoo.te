@@ -1,0 +1,19 @@
+type udoo, domain;
+type udoo_exec, exec_type, file_type;
+
+init_daemon_domain(udoo)
+
+
+allow udoo default_prop:property_service set;
+allow udoo init:unix_stream_socket connectto;
+allow udoo proc:file { open read };
+allow udoo property_socket:sock_file write;
+allow udoo self:capability { dac_override sys_time };
+allow udoo shell_exec:file { getattr read };
+allow udoo sysfs:file { open write };
+allow udoo system_data_file:dir { add_name write };
+allow udoo system_data_file:file { create getattr open read setattr write };
+allow udoo toolbox_exec:file { execute execute_no_trans getattr open read };
+allow udoo udoo_exec:file ioctl;
+
+

@@ -1,0 +1,73 @@
+#============= audioserver ==============
+allow audioserver rootfs:lnk_file getattr;
+
+#============= bluetooth ==============
+allow bluetooth storage_stub_file:dir getattr;
+
+#============= bootanim ==============
+allow bootanim rootfs:lnk_file getattr;
+
+#============= cameraserver ==============
+allow cameraserver rootfs:lnk_file getattr;
+
+#============= init ==============
+allow init system_file:system module_load;
+allow init self:capability sys_module;
+
+#============= mediacodec ==============
+allow mediacodec rootfs:lnk_file getattr;
+
+#============= mediadrmserver ==============
+allow mediadrmserver rootfs:lnk_file getattr;
+
+#============= shell ==============
+allow shell adb_data_file:dir getattr;
+allow shell apk_private_data_file:dir getattr;
+allow shell asec_image_file:dir getattr;
+allow shell audio_device:chr_file getattr;
+allow shell audio_device:dir getattr;
+allow shell backup_data_file:dir getattr;
+allow shell block_device:dir getattr;
+allow shell device:chr_file getattr;
+allow shell device:dir { open read };
+allow shell device:file getattr;
+allow shell dm_device:chr_file getattr;
+allow shell drm_data_file:dir getattr;
+allow shell fscklogs:dir getattr;
+allow shell full_device:chr_file getattr;
+allow shell fuse_device:chr_file getattr;
+allow shell graphics_device:dir getattr;
+allow shell hw_random_device:chr_file getattr;
+allow shell i2c_device:chr_file getattr;
+allow shell init_exec:file getattr;
+allow shell install_data_file:file getattr;
+allow shell kmsg_device:chr_file getattr;
+allow shell media_data_file:dir getattr;
+allow shell mtp_device:chr_file getattr;
+allow shell ota_data_file:dir getattr;
+allow shell ota_package_file:dir getattr;
+allow shell ppp_device:chr_file getattr;
+allow shell property_data_file:dir getattr;
+allow shell rootfs:file getattr;
+allow shell rtc_device:chr_file getattr;
+allow shell security_file:dir getattr;
+allow shell self:capability { net_admin net_raw sys_module sys_ptrace };
+allow shell self:netlink_socket { bind create getattr read setopt write };
+allow shell self:udp_socket ioctl;
+allow shell sysfs:file { getattr open read };
+allow shell sysfs:lnk_file getattr;
+allow shell system_data_file:dir { add_name write };
+allow shell system_data_file:file { create getattr write };
+allow shell tombstone_data_file:dir getattr;
+allow shell uhid_device:chr_file getattr;
+allow shell vcs_device:chr_file getattr;
+allow shell video_device:chr_file getattr;
+allow shell watchdog_device:chr_file getattr;
+
+#============= system_app ==============
+allow system_app radio_data_file:dir getattr;
+
+#============= system_server ==============
+allow system_server self:capability sys_module;
+
+
