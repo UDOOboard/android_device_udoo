@@ -10,6 +10,8 @@ PRODUCT_PACKAGES += \
 	LiveWallpapers				\
 	LiveWallpapersPicker			\
 	MagicSmokeWallpapers			\
+	Eleven					\
+	Browser2				\
 	Gallery2				\
 	Gallery		    			\
 	SoundRecorder				\
@@ -93,11 +95,7 @@ PRODUCT_PACKAGES += \
 
 # imx6 Hardware HAL libs.
 PRODUCT_PACKAGES += \
-	sensors.SABRESD				\
-	sensors.ARM2				\
-	sensors.SABREAUTO			\
 	overlay.imx6				\
-	lights.imx6				\
 	gralloc.imx6				\
 	copybit.imx6				\
 	hwcomposer.imx6				\
@@ -125,9 +123,6 @@ PRODUCT_PACKAGES += \
 	libdrmframework             		\
 	libdrmpassthruplugin        		\
 	libfwdlockengine            		\
-# power tool
-PRODUCT_PACKAGES += \
-	powerdebug
 
 # gpu debug tool
 PRODUCT_PACKAGES += \
