@@ -48,7 +48,6 @@ BOARD_WPA_SUPPLICANT_DRIVER              := NL80211
 WIFI_DRIVER_STATE_CTRL_PARAM             := true
 WIFI_DRIVER_MODULE_PATH                  := "/system/lib/modules/rt2800usb.ko"
 WIFI_DRIVER_MODULE_NAME                  := "rt2800usb"
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB_RALINK  := lib_driver_cmd_ralink
 
 TARGET_KERNEL_MODULES       += \
 	net/mac80211/mac80211.ko:system/lib/modules/mac80211.ko \
@@ -60,8 +59,6 @@ TARGET_KERNEL_MODULES       += \
 
 PRODUCT_COPY_FILES +=   \
 	device/udoo/common/wifi/firmware/rt5370/rt2870.bin:system/etc/firmware/rt2870.bin
-
-BOARD_SUPPORT_BCM_WIFI  := false
 
 # we don't support sparse image.
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
