@@ -5,6 +5,10 @@ $(call inherit-product, $(TOPDIR)frameworks/base/data/sounds/AllAudio.mk)
 PRODUCT_BRAND := Seco
 PRODUCT_MANUFACTURER := Seco
 
+# TWRP fstab
+PRODUCT_COPY_FILES += \
+    device/udoo/imx6/twrp.fstab:recovery/root/etc/twrp.fstab
+
 # Wi-Fi
 PRODUCT_PACKAGES += \
     wpa_supplicant \
