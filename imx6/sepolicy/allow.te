@@ -44,8 +44,6 @@ allow shell install_data_file:file getattr;
 allow shell kmsg_device:chr_file getattr;
 allow shell media_data_file:dir getattr;
 allow shell mtp_device:chr_file getattr;
-allow shell ota_data_file:dir getattr;
-allow shell ota_package_file:dir getattr;
 allow shell ppp_device:chr_file getattr;
 allow shell property_data_file:dir getattr;
 allow shell rootfs:file getattr;

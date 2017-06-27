@@ -32,7 +32,6 @@ PRODUCT_PACKAGES += \
 	SoundRecorder				\
 	Camera					\
         LegacyCamera                            \
-	FSLOta					\
 	CactusPlayer                            \
 	WfdSink                                 \
 	wfd                                     \
@@ -319,7 +318,6 @@ PRODUCT_COPY_FILES +=	\
 	device/udoo/imx6/etc/init.usb.rc:root/init.freescale.usb.rc \
 	device/udoo/imx6/etc/ueventd.freescale.rc:root/ueventd.freescale.rc \
 	device/udoo/imx6/etc/ppp/init.gprs-pppd:system/etc/ppp/init.gprs-pppd \
-	device/udoo/imx6/etc/ota.conf:system/etc/ota.conf \
 	device/udoo/imx6/init.recovery.freescale.rc:root/init.recovery.freescale.rc \
 	device/fsl-proprietary/media-profile/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
 	device/fsl-proprietary/media-profile/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \

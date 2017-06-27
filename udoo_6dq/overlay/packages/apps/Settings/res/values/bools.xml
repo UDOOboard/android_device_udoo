@@ -15,5 +15,5 @@
 -->
 
 <resources>
-    <bool name="config_additional_system_update_setting_enable">true</bool>
+    <bool name="config_additional_system_update_setting_enable">false</bool>
 </resources>
