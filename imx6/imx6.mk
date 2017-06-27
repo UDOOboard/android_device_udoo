@@ -32,23 +32,12 @@ PRODUCT_PACKAGES += \
 	SoundRecorder				\
 	Camera					\
         LegacyCamera                            \
-	CactusPlayer                            \
-	WfdSink                                 \
-	wfd                                     \
-	A2dpSinkApp                             \
-	BleServerEmulator                       \
-	BleClient                               \
 	ethernet                                \
-	libfsl_wfd.so                           \
-	libfsl_wfd                           \
 	libpxp                               \
-	fsl.imx.jar                             \
 	libfsl_hdcp_blob.so                     \
 	libfsl_hdcp_blob                     \
 	libstagefright_hdcp.so                  \
 	libstagefright_hdcp                  \
-	FSLProfileApp				\
-	FSLProfileService			\
 	VisualizationWallpapers			\
 	CubeLiveWallpapers			\
 	PinyinIME				\
@@ -69,10 +58,6 @@ PRODUCT_PACKAGES += \
 	SuperSU                \
 	Terminal               \
 	UdooReboot             \
-
-#FREESCALE_EXTENDED
-PRODUCT_PACKAGES += freescale-extended 		\
-		    freescale-extended.xml
 
 # Broadcom firmwares
 PRODUCT_PACKAGES += \
@@ -114,7 +99,6 @@ PRODUCT_PACKAGES += \
 	libbt-vendor				\
 	libbt-vendor-broadcom		\
 	magd
-
 
 # Freescale VPU firmware files.
 PRODUCT_PACKAGES += \
