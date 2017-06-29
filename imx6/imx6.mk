@@ -26,7 +26,6 @@ PRODUCT_PACKAGES += \
 	LiveWallpapersPicker			\
 	MagicSmokeWallpapers			\
 	Eleven					\
-	Browser2				\
 	Gallery2				\
 	Gallery		    			\
 	SoundRecorder				\
@@ -54,6 +53,10 @@ PRODUCT_PACKAGES += \
 	SuperSU                \
 	Terminal               \
 	UdooReboot             \
+
+# Chromium prebuilt
+PRODUCT_PACKAGES += \
+    Chromium
 
 # Broadcom firmwares
 PRODUCT_PACKAGES += \
