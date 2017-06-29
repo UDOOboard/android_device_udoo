@@ -34,10 +34,6 @@ PRODUCT_PACKAGES += \
         LegacyCamera                            \
 	ethernet                                \
 	libpxp                               \
-	libfsl_hdcp_blob.so                     \
-	libfsl_hdcp_blob                     \
-	libstagefright_hdcp.so                  \
-	libstagefright_hdcp                  \
 	VisualizationWallpapers			\
 	CubeLiveWallpapers			\
 	PinyinIME				\
