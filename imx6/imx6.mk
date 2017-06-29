@@ -2,6 +2,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_no_telephony.mk)
 $(call inherit-product, $(TOPDIR)frameworks/base/data/sounds/AllAudio.mk)
 
+# Include SuperSU
+$(call inherit-product, vendor/supersu/vendor.mk)
+
 PRODUCT_BRAND := Seco
 PRODUCT_MANUFACTURER := Seco
 
@@ -50,7 +53,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	CMFileManager          \
 	AdbWireless            \
-	SuperSU                \
 	Terminal               \
 	UdooReboot             \
 
