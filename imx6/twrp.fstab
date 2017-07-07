@@ -6,8 +6,11 @@
 /bootloader  emmc    /dev/block/mmcblk0
 /boot        emmc    /dev/block/mmcblk0p1
 /recovery    emmc    /dev/block/mmcblk0p2
-/data        ext4    /dev/block/mmcblk0p4    flags=encryptable=/dev/block/mmcblk0p9
+/data        ext4    /dev/block/mmcblk0p4                         flags=encryptable=/dev/block/mmcblk0p9
 /system      ext4    /dev/block/mmcblk0p5
 /cache       ext4    /dev/block/mmcblk0p6
 /device      ext4    /dev/block/mmcblk0p7
 /misc        emmc    /dev/block/mmcblk0p8
+
+/usb-sda     auto    /dev/block/sda1         /dev/block/sda       flags=display="USB-SDA";storage;wipeingui;removable
+/usb-sdb     auto    /dev/block/sdb1         /dev/block/sdb       flags=display="USB-SDB";storage;wipeingui;removable
