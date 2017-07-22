@@ -104,5 +104,9 @@ TW_NO_SCREEN_TIMEOUT := true
 TW_NO_REBOOT_BOOTLOADER := true
 BOARD_HAS_NO_REAL_SDCARD := true
 
+# Time Zone data for TWRP
+PRODUCT_COPY_FILES += \
+    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+
 -include device/google/gapps/gapps_config.mk
 
