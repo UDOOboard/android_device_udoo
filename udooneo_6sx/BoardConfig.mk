@@ -115,6 +115,7 @@ TARGET_KERNEL_MODULES += \
 
 PRODUCT_COPY_FILES +=	\
 	device/udoo/udooneo_6sx/uEnv.txt:system/uEnv.txt
+	device/udoo/udooneo_6sx/udoo-gpio-export:system/bin/udoo-gpio-export
 
 BOARD_SEPOLICY_DIRS := \
        device/udoo/imx6/sepolicy \

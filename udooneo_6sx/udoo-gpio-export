@@ -1,0 +1,79 @@
+#!/system/xbin/bash
+
+mkdir /mnt/gpios
+mkdir /mnt/sensors
+mount -t tmpfs -o size=1m tmpfs /mnt/gpios
+mount -t tmpfs -o size=1m tmpfs /mnt/sensors
+
+chmod 222 /sys/class/gpio/export
+chmod 222 /sys/class/gpio/unexport
+
+GPIOS[16]=106
+GPIOS[17]=107
+GPIOS[18]=180
+GPIOS[19]=181
+GPIOS[20]=172
+GPIOS[21]=173
+GPIOS[22]=182
+GPIOS[23]=24
+GPIOS[24]=25
+GPIOS[25]=22
+GPIOS[26]=14
+GPIOS[27]=15
+GPIOS[28]=16
+GPIOS[29]=17
+GPIOS[30]=18
+GPIOS[31]=19
+GPIOS[32]=20
+GPIOS[33]=21
+GPIOS[34]=203
+GPIOS[35]=202
+GPIOS[36]=177
+GPIOS[37]=176
+GPIOS[38]=175
+GPIOS[39]=174
+GPIOS[40]=119
+GPIOS[41]=124
+GPIOS[42]=127
+GPIOS[43]=116
+GPIOS[44]=7
+GPIOS[45]=6
+GPIOS[46]=5
+GPIOS[47]=4
+
+SENSORS_PATHS[0]="/sys/class/misc/FreescaleAccelerometer"
+SENSORS_PATHS[1]="/sys/class/misc/FreescaleMagnetometer"
+SENSORS_PATHS[2]="/sys/class/misc/FreescaleGyroscope"
+SENSORS_PATHS[3]="/sys/class/i2c-dev/i2c-1/device/1-0048/hwmon/hwmon*/device/"
+SENSORS_PATHS[4]="/sys/class/i2c-dev/i2c-1/device/1-0060/iio:device*/"
+SENSORS_PATHS[5]="/sys/class/i2c-dev/i2c-1/device/1-0029/iio:device*/"
+SENSORS_PATHS[6]="/sys/class/i2c-dev/i2c-1/device/1-0040/"
+SENSORS_NAMES[0]="accelerometer"
+SENSORS_NAMES[1]="magnetometer"
+SENSORS_NAMES[2]="gyroscope"
+SENSORS_NAMES[3]="temperature"
+SENSORS_NAMES[4]="barometer"
+SENSORS_NAMES[5]="light"
+SENSORS_NAMES[6]="humidity"
+
+for i in ${!GPIOS[*]}
+do
+  n=${GPIOS[$i]}
+  gpio_dir=/sys/class/gpio/gpio$n
+  if [ ! -d $gpio_dir ] 
+  then
+    echo $n > /sys/class/gpio/export || continue
+    echo in > $gpio_dir/direction
+    chmod 666 $gpio_dir/active_low $gpio_dir/direction $gpio_dir/edge $gpio_dir/value
+  fi
+  ln -s $gpio_dir /mnt/gpios/pin$i
+done
+
+for i in ${!SENSORS_NAMES[*]}
+do
+  sensor_dir=${SENSORS_PATHS[$i]}
+  sensor_name=${SENSORS_NAMES[$i]}
+  [ -d $sensor_dir ] || continue
+  ln -s $sensor_dir /mnt/sensors/$sensor_name
+done
+
