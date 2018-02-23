@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
 	Camera2         \
 	camera.imx6     \
 	camerafocus     \
+	lights.imx6     \
 	libglib         \
 	libusb          \
 	libbt-vendor    \
