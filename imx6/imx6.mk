@@ -5,6 +5,14 @@ $(call inherit-product, $(TOPDIR)frameworks/base/data/sounds/AllAudio.mk)
 PRODUCT_BRAND := UDOO
 PRODUCT_MANUFACTURER := Seco
 
+# i2c-tools
+PRODUCT_PACKAGES += \
+	i2c-tools	\
+	i2cdetect	\
+	i2cget		\
+	i2cset		\
+	i2cdump
+
 GAPPS_VARIANT := nano
 
 PRODUCT_PACKAGES += \
