@@ -27,6 +27,9 @@ PRODUCT_COPY_FILES +=	\
  PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/mmcblk0p5
  $(call inherit-product, build/target/product/verity.mk)
 
+# PRODUCT_PACKAGES += \
+#	eMMCinstaller
+
 PRODUCT_PACKAGES += \
 	Camera2         \
 	camera.imx6     \
