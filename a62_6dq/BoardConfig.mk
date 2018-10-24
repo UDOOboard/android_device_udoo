@@ -70,7 +70,7 @@ USE_GPU_ALLOCATOR := true
 IMX_CAMERA_HAL_V3 := true
 
 TARGET_UBOOT_VERSION := uboot-imx
-TARGET_BOOTLOADER_CONFIG := imx6q:mx6qdl_a62_android_defconfig
+TARGET_BOOTLOADER_CONFIG := imx6qdl_2Giga:mx6qdl_a62_2Giga_android_defconfig imx6qdl_1Giga:mx6qdl_a62_android_defconfig 
 TARGET_KERNEL_DEFCONF := imx_v7_android_A62_defconfig
 TARGET_BOARD_DTS_CONFIG := imx6q:imx6q-seco_A62.dtb imx6dl:imx6dl-seco_A62.dtb
 
