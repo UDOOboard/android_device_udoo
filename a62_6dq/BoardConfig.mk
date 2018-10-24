@@ -24,7 +24,7 @@ ADDITIONAL_BUILD_PROPERTIES += \
 
 TARGET_BOOTLOADER_BOARD_NAME := A62
 PRODUCT_MODEL := A62-MX6DQ
-DEFAULT_DISPLAY := lvds7
+DEFAULT_DISPLAY := auto
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/udoo/imx6
 BOARD_WLAN_DEVICE                        := RALINK
@@ -81,14 +81,19 @@ TARGET_KERNEL_MODULES += \
 	arch/arm/boot/dts/imx6dl-seco_A62-lvds15.dtb:system/dts/imx6dl-a62-lvds15.dtb \
 	arch/arm/boot/dts/imx6dl-seco_A62-lvds1080.dtb:system/dts/imx6dl-a62-lvds1080.dtb \
 	arch/arm/boot/dts/imx6dl-seco_A62-lvds7hdmi.dtb:system/dts/imx6dl-a62-lvds7hdmi.dtb \
+	arch/arm/boot/dts/imx6dl-seco_A62-lvds10hdmi.dtb:system/dts/imx6dl-a62-lvds10hdmi.dtb \
 	arch/arm/boot/dts/imx6q-seco_A62-hdmi.dtb:system/dts/imx6q-a62-hdmi.dtb \
 	arch/arm/boot/dts/imx6q-seco_A62-lvds7.dtb:system/dts/imx6q-a62-lvds7.dtb \
 	arch/arm/boot/dts/imx6q-seco_A62-lvds10.dtb:system/dts/imx6q-a62-lvds10.dtb \
 	arch/arm/boot/dts/imx6q-seco_A62-lvds15.dtb:system/dts/imx6q-a62-lvds15.dtb \
 	arch/arm/boot/dts/imx6q-seco_A62-lvds1080.dtb:system/dts/imx6q-a62-lvds1080.dtb \
 	arch/arm/boot/dts/imx6q-seco_A62-lvds7hdmi.dtb:system/dts/imx6q-a62-lvds7hdmi.dtb \
+	arch/arm/boot/dts/imx6q-seco_A62-lvds10hdmi.dtb:system/dts/imx6q-a62-lvds10hdmi.dtb
 
-ifeq ($(DEFAULT_DISPLAY),lvds7)
+ifeq ($(DEFAULT_DISPLAY),auto)
+PRODUCT_COPY_FILES +=	\
+	device/udoo/a62_6dq/uEnvAUTO.txt:system/uEnv.txt
+else ifeq ($(DEFAULT_DISPLAY),lvds7)
 PRODUCT_COPY_FILES +=	\
 	device/udoo/a62_6dq/uEnv7.txt:system/uEnv.txt
 else ifeq ($(DEFAULT_DISPLAY),lvds10)

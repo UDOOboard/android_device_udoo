@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
      <string-array name="displayTypeArray">
+        <item>auto</item>
         <item>lvds7</item>
+	<item>lvds10</item>
 	<item>lvds15</item>
         <item>hdmi</item>
         <item>lvds7hdmi</item>
+        <item>lvds10hdmi</item>
     </string-array>
 
     <string-array name="displayValues">
+        <item>AUTO</item>
         <item>LVDS 7</item>
+        <item>LVDS 10</item>
         <item>LVDS 15</item>
 	<item>HDMI (full HD)</item>
         <item>LVDS 7 + HDMI</item>
+        <item>LVDS 10 + HDMI</item>
     </string-array>
 
     <!-- Default audio device choices -->

@@ -1,0 +1,4 @@
+#save this file with unix-like newlines! (\n, 0x0A)
+
+video_output=auto
+#fdt_file=/path/to/custom/devicetree.dtb
